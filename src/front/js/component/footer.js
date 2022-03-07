@@ -22,7 +22,7 @@ export const FooteR = () => {
         </div>
         <div className="container-fluid text-end">© 2022 Copyright</div>
         <div className="justify-content-center">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa-brands fa-twitter"></i>
           <i class="fa fa-instagram" aria-hidden="true"></i>
           <i class="fa fa-facebook-official" aria-hidden="true"></i>
         </div>
