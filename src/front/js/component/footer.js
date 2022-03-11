@@ -31,9 +31,9 @@ export const FooteR = () => {
         </div>
         <div id="icons" class="container md">
           <div className="container-fluid text-center">
-            <i class="fa-brands fa-twitter fa-3x"></i>
-            <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
-            <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+            <i class="fa-brands fa-twitter fa-1x"></i>
+            <i class="fa fa-instagram fa-1x" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
           </div>
         </div>
         <div id="signature" className="container-fluid text-center">
