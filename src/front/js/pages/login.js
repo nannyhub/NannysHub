@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/login.css";
 
-const LogIn = () => {
+const Login = () => {
   return (
     <>
       <div className="container-fluid col-4">
@@ -92,4 +92,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Login;
