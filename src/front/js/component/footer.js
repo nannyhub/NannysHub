@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const FooteR = () => {
+export const Footer = () => {
   return (
     <>
       <footer className="page-footer font-small blue pt-4">
-        <div class="container text-center">
+        <div id="links" class="container text-center">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
               <Link to="/">
@@ -29,15 +29,15 @@ export const FooteR = () => {
             </div>
           </div>
         </div>
-        <div id="icons" class="container md">
-          <div className="container-fluid text-center">
-            <i class="fa-brands fa-twitter fa-1x"></i>
-            <i class="fa fa-instagram fa-1x" aria-hidden="true"></i>
-            <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
+        <div id="icons-container" class="container md">
+          <div id="icons" className="container-fluid text-center">
+            <i id="twitter" class="fa fa-brands fa-twitter"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
           </div>
-        </div>
-        <div id="signature" className="container-fluid text-center">
-          © 2022 Copyright The 3 Musketeers
+          <div id="signature" className="container-fluid text-center">
+            <p>© 2022 Copyright</p>
+          </div>
         </div>
       </footer>
     </>

@@ -14,3 +14,22 @@ a {
 #signature {
   font-size: 13px;
 }
+
+.fa {
+  width: 50px;
+  height: 50px;
+}
+
+#links {
+  padding-bottom: 45px;
+}
+
+#icons-container {
+  position: relative;
+}
+
+#icons {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}

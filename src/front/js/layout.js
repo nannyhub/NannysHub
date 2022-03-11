@@ -9,7 +9,7 @@ import Login from "./pages/login";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { FooteR } from "./component/footer";
+import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
