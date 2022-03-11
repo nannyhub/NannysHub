@@ -1,0 +1,16 @@
+.page-footer {
+  background-color: #ffb74d !important;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: white;
+}
+
+#signature {
+  font-size: 13px;
+}

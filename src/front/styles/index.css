@@ -1,7 +1,1 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
-.page-footer {
-  background-color: rgb(141, 143, 145) !important;
-  color: white;
-}
+@import "../styles/footer.css";

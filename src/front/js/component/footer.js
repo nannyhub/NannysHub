@@ -1,30 +1,43 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const FooteR = () => {
   return (
     <>
       <footer className="page-footer font-small blue pt-4">
-        <div class="container">
+        <div class="container text-center">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
-              <h5>Ask to the Community</h5>
+              <Link to="/">
+                <h6>Ask to the Community</h6>
+              </Link>
             </div>
             <div>
-              <h5>FAQ's</h5>
+              <Link to="/">
+                <h6>FAQ's</h6>
+              </Link>
             </div>
             <div>
-              <h5>Contact Us</h5>
+              <Link to="/">
+                <h6>Contact Us</h6>
+              </Link>
             </div>
             <div>
-              <h5>About Us</h5>
+              <Link to="/">
+                <h6>About Us</h6>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="container-fluid text-end">© 2022 Copyright</div>
-        <div className="justify-content-center">
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <div id="icons" class="container md">
+          <div className="container-fluid text-center">
+            <i class="fa-brands fa-twitter fa-3x"></i>
+            <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div id="signature" className="container-fluid text-center">
+          © 2022 Copyright The 3 Musketeers
         </div>
       </footer>
     </>
