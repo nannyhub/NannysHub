@@ -1,7 +1,7 @@
 import React from "react";
 import user1 from "../../img/paty.jpg";
 import user2 from "../../img/nan.jpg";
-import "./styles/Testimonials.css";
+import "../../styles/Testimonials.css";
 
 const Home = () => {
   return (

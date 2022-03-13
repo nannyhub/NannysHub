@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+// import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
 import Testimonials from "../component/Testimonials";
 import Pricing from "../component/Pricing";
 import Header from "../component/Header";
 
-const Home = () => {
+export const Home = () => {
   return (
     <React.Fragment>
       <Header />
@@ -16,10 +15,3 @@ const Home = () => {
     </React.Fragment>
   );
 };
-
-export default Home;
-
-/*
-            <Pricing />
-            <Testimonials />
-*/
