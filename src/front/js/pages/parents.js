@@ -63,15 +63,11 @@ const Parents = () => {
               </div>
             </div>
             <div className="row mb-3">
-              <label
-                for="inputchildren"
-                className="col-sm-2 col-form-label"
-                id="children"
-              >
+              <label className="col-sm-2 col-form-label" id="children">
                 Number of Children
               </label>
               <select
-                class="form-select form-select-sm col-2"
+                className="form-select form-select-sm col-2"
                 aria-label=".form-select-sm example"
               >
                 <option value="1">One</option>

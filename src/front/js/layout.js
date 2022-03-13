@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import Login from "./pages/login";
-import Parents from "./pages/parentsview";
+import Parents from "./pages/parents";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -33,7 +33,7 @@ const Layout = () => {
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/parentsview">
+            <Route exact path="/parents">
               <Parents />
             </Route>
             <Route exact path="/single/:theid">
