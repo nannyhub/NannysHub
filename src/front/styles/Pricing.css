@@ -18,7 +18,7 @@
 }
 
 .price .col-header {
-  background-color: #111;
+  background-color: #fbb464ff;
   color: white;
   font-size: 25px;
 }
@@ -35,7 +35,7 @@
 }
 
 .button {
-  background-color: #37387a;
+  background-color: #3da2daff;
   border: none;
   color: white;
   padding: 10px 25px;
@@ -48,7 +48,8 @@
 }
 
 .button:hover {
-  background-color: #22234b;
+  background-color: #d2d9e9ff;
+  color: black;
 }
 
 @media only screen and (max-width: 600px) {

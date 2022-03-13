@@ -1,7 +1,7 @@
 header {
   color: white;
-  background: #37387a;
-  background-image: url("../../front/img/nan.jpg");
+  background: #3da2daff;
+  background-image: url("https://github.com/nannyhub/NannysHub/blob/landingpage/src/front/img/nan.jpg");
   min-height: 50vh;
   padding-top: 20vh;
   text-align: center;
@@ -9,7 +9,7 @@ header {
   z-index: 1;
   overflow: hidden;
   background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-repeat: no-repeat;
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
@@ -25,5 +25,5 @@ header h2 {
 }
 
 header a {
-  color: #ffff;
+  color: #d2d9e9;
 }
