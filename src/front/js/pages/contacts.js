@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
 import "../../styles/contacts.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const Contacts = () => {
   return (
@@ -25,46 +28,25 @@ const Contacts = () => {
         </p>
       </div>
       <div className="container-fluid col-md-4" id="form">
-        <form id="contactForm">
-          <div className="mb-3">
-            <label className="form-label" for="name">
-              Name
-            </label>
-            <input
-              className="form-control"
-              id="name"
-              type="text"
-              placeholder="Your name"
-            />
-          </div>
-          <div className="mb-3">
-            <label className="form-label" for="emailAddress">
-              Email Address
-            </label>
-            <input
-              className="form-control"
-              id="emailAddress"
-              type="email"
-              placeholder=" Your email address"
-            ></input>
-          </div>
-          <div className="mb-3">
-            <label className="form-label" for="message">
-              Message
-            </label>
-            <textarea
-              className="form-control"
-              id="message"
-              type="text"
-              placeholder="Type your message"
-            ></textarea>
-          </div>
-          <div>
-            <button className="btn btn-primary btn-lg" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
+        <Form>
+          <Form.Group className="mb-3" controlId="formName">
+            <Form.Control type="name" placeholder="Your name" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control type="email" placeholder="Your email" />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formSubject">
+            <Form.Control type="subject" placeholder="Subject" />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formMessage" id="message">
+            <Form.Control type="message" placeholder=" Add your message" />
+          </Form.Group>
+          <Button variant="primary" type="submit" id="button">
+            Submit
+          </Button>
+        </Form>
       </div>
     </>
   );
