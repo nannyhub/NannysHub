@@ -1,4 +1,14 @@
-#fomr{
-    margin-top: 20px;
-    margin-right: 60%;
+#form {
+  padding: 5px;
+}
+
+#mission {
+  align-self: center;
+  background-color: whitesmoke;
+  margin-left: 30%;
+}
+
+#contact {
+  background-color: whitesmoke;
+  margin-left: 30%;
 }
