@@ -1,14 +1,18 @@
 .page-footer {
-  background-color: #ffb74d !important;
+  background-color: #ffb74d;
   color: white;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  height: auto;
 }
 
-a {
+a:link,
+a:hover {
   color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #signature {
@@ -21,7 +25,7 @@ a {
 }
 
 #links {
-  padding-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 #icons-container {

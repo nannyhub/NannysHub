@@ -29,11 +29,33 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div id="icons-container" class="container md">
+        <div id="icons-container" className="container md">
           <div id="icons" className="container-fluid text-center">
-            <i id="twitter" class="fa fa-brands fa-twitter"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <a
+              target="_blank"
+              title="follow us on Twitter"
+              href="https://twitter.com/hashtag/nannies"
+            >
+              <i
+                id="twitter"
+                className="fa fa-brands fa-twitter"
+                href="https://twitter.com/hashtag/nannies"
+              ></i>
+            </a>
+            <a
+              target="_blank"
+              title="follow me on instagram"
+              href="https://www.instagram.com/explore/tags/nannies/?hl=es"
+            >
+              <i className="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              target="_blank"
+              title="follow me on facebook"
+              href="https://es-la.facebook.com/NannyAgencyPortugal/"
+            >
+              <i className="fa fa-facebook-official" aria-hidden="true"></i>
+            </a>
           </div>
           <div id="signature" className="container-fluid text-center">
             <p>© 2022 Copyright</p>
