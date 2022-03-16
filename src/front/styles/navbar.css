@@ -9,6 +9,7 @@
   display: flex;
   align-items: flex-start;
   font-size: xx-large;
+  margin-right: 80%;
 }
 #button1 {
   padding: 10px;
