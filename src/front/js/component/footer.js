@@ -8,8 +8,8 @@ export const Footer = () => {
         <div id="links" class="container text-center">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
-              <Link to="/">
-                <h6>Ask to the Community</h6>
+              <Link to="/login">
+                <h6>Log In</h6>
               </Link>
             </div>
             <div>
@@ -24,7 +24,7 @@ export const Footer = () => {
             </div>
             <div>
               <Link to="/">
-                <h6>About Us</h6>
+                <h6>Search Nannies</h6>
               </Link>
             </div>
           </div>
