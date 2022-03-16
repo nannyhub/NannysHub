@@ -56,7 +56,7 @@ const Parents = () => {
               </Dropdown>
             </Form.Group>
 
-            <Button variant="primary" type="submit" id="button">
+            <Button variant="dark" type="submit" id="button">
               Submit
             </Button>
           </Form>
