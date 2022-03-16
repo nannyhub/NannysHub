@@ -24,7 +24,7 @@ export const Navbar = () => {
             <Link to="/login">Login</Link>
           </button>
           <button type="button" className="btn btn-light" id="button2">
-            <Link to="/signup">Login</Link>
+            <Link to="/signup">Sign Up</Link>
           </button>
         </div>
       </div>
