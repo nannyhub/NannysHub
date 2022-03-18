@@ -1,7 +1,7 @@
-header {
-  color: white;
-  background: #3da2daff;
-  background-image: url("https://github.com/nannyhub/NannysHub/blob/landingpage/src/front/img/nan.jpg");
+header,
+.bg-image {
+  color: #3da2daff;
+  background-image: url("https://github.com/nannyhub/NannysHub/blob/landingpage/src/front/img/nan.jpg?raw=true");
   min-height: 50vh;
   padding-top: 20vh;
   text-align: center;
@@ -11,6 +11,7 @@ header {
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
   background-size: cover; /* Resize the background image to cover the entire container */
+  font-weight: bold;
 }
 
 header h1 {
@@ -25,5 +26,13 @@ header h2 {
 }
 
 header a {
-  color: #d2d9e9;
+  color: #fbb464ff;
+}
+a:hover {
+  color: #f06e26ff;
+}
+
+/* selected link */
+a:active {
+  color: #f06e26ff;
 }

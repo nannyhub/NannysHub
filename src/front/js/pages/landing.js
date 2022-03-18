@@ -1,22 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import "../../styles/home.css";
 
-import Testimonials from "../misc/Testimonials";
-import Pricing from "../misc/Pricing";
-import Header from "../misc/Header";
+import Testimonials from "../component/Testimonials";
+import Pricing from "../component/Pricing";
+import Header from "../component/Header";
 
-const Home = () => {
+export const Home = () => {
   return (
-    <React.Fragment>
+    <>
       <Header />
       <Pricing />
       <Testimonials />
-    </React.Fragment>
+    </>
   );
 };
-
-export default Home;
-
-/*
-            <Pricing />
-            <Testimonials />
-*/

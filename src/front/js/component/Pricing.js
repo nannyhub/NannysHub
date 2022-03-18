@@ -1,9 +1,9 @@
 import React from "react";
 import "../../styles/Pricing.css";
 
-const Home = () => {
+const Pricing = () => {
   return (
-    <React.Fragment>
+    <>
       <section className="content-container">
         <div className="columns">
           <ul className="price">
@@ -46,8 +46,8 @@ const Home = () => {
           </ul>
         </div>
       </section>
-    </React.Fragment>
+    </>
   );
 };
 
-export default Home;
+export default Pricing;

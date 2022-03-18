@@ -3,9 +3,9 @@ import user1 from "../../img/paty.jpg";
 import user2 from "../../img/nan.jpg";
 import "../../styles/Testimonials.css";
 
-const Home = () => {
+const Testimonials = () => {
   return (
-    <React.Fragment>
+    <>
       <section className="content-container">
         <div className="textArea">
           <h2>Testimonials</h2>
@@ -27,8 +27,8 @@ const Home = () => {
           <p>Nice enviroment to run my personal projects.</p>
         </div>
       </section>
-    </React.Fragment>
+    </>
   );
 };
 
-export default Home;
+export default Testimonials;
