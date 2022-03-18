@@ -1,0 +1,15 @@
+#avatar {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: auto;
+  padding: 15px;
+}
+
+#sign {
+  align-self: center;
+  margin-left: 43%;
+  background-color: black;
+  border: 1px;
+  border-color: black;
+}
