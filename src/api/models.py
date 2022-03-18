@@ -29,7 +29,8 @@ class Parents(db.Model):
     id = Column(Integer, unique=True, primary_key=True)
     first_name = Column(String(200), nullable=False)
     last_name = Column(String(200), nullable=False)
-    number_of_children = Column(Integer(10), nullable=False)
+    description= Column(String(180), nullable=False)
+    number_of_children = Column(Integer(10), nullable=True)
     parents = relationship('User.id', backref='User', lazy=True)
     nannys = relationship('Nannys.id', backref='Nanny', lazy=True)
 
