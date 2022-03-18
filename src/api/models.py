@@ -51,10 +51,65 @@ class Favorites(db.Model):
     nanny_id = Column(Integer, ForeignKey('Nanny.id'))
 
     def __repr__(self):
-        return '<FavoriteCharacter %r>' % self.user_id
+        return '<Favorites %r>' % self.favorites_id
 
     def serialize(self):
-        user = User.query.get(self.user_id)
+        return {
+            "id": self.id, 
+            "parent_id": self.parent_id,
+            "nanny_id": self.nanny_id
+        }
+
+
+    class Nanny(db.Model):
+    id = Column(Integer, primary_key=True)
+    first_name = Column(String(200), nullable=False)
+    last_name = Column(String(200), nullable=False)
+    skills = Column(String(200), nullable=False)
+    experience = Column(String(200), nullable=False)
+    location = Column(String(200), nullable=False)
+    price = Float(Integer), nullable=False)
+
+    def __repr__(self):
+        return '<Nanny %r>' % self.nanny_id
+
+    def serialize(self):
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "skils": self.skills,
+            "experience": self.experience,
+            "location": self.location,
+            "price": self.price
+        }
+
+
+##these last 2 tables and relationships need to be checked with teachers
+    class Agenda(db.Model):
+    id = Column(Integer, primary_key=True)
+    Agenda= relationship(nanny_id)
+    Agenda= relationship(parent_id)
+
+    def __repr__(self):
+        return '<Agenda %r>' % self.user_id
+
+    def serialize(self):
+        return {
+            "parent_id": user.email,
+            "nanny_id": self.nanny_id,
+        }
+
+
+
+class Review(db.Model):
+    id = Column(Integer, primary_key=True)
+    Review= relationship(nanny_id)
+    Review= relationship(parent_id)
+
+    def __repr__(self):
+        return '<Review %r>' % self.user_id
+
+    def serialize(self):
         return {
             "parent_id": user.email,
             "nanny_id": self.nanny_id,
