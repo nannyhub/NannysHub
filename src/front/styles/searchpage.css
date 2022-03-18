@@ -1,0 +1,11 @@
+.me-2 {
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  height: 100%;
+  outline: none;
+  padding-inline-end: 50px;
+  padding-inline-start: 50px;
+  position: relative;
+  width: 100%;
+}

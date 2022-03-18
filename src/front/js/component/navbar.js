@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img
             id="mary"
             src="https://behindthecurtaincincy.files.wordpress.com/2015/07/voi_mary-poppins-logo.jpg"
