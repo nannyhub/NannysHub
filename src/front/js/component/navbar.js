@@ -23,7 +23,7 @@ export const Navbar = () => {
           <button type="button" className="btn" id="button1">
             <Link to="/login">Login</Link>
           </button>
-          <button type="button" className="btn btn-dark" id="button2">
+          <button type="button" className="btn" id="button2">
             <Link to="/signup">Sign Up</Link>
           </button>
         </div>

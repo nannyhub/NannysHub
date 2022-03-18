@@ -17,6 +17,7 @@
 }
 #button2 {
   padding: 10px;
+  background-color: black;
 }
 #mary {
   height: 60px;
@@ -25,8 +26,4 @@
   border-radius: 50%;
   display: flex;
   align-items: flex-start;
-}
-
-a {
-  color: white;
 }
