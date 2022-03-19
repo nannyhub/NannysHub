@@ -4,8 +4,8 @@ import "../../styles/signup.css";
 
 export const Signup = () => {
   return (
-    <form className="d-flex flex-column align-items-center">
-      <h3 className="mt-3" >Sign Up</h3>
+    <form>
+      <h3>Sign Up</h3>
       <div className="form-group">
         <label>First name</label>
         <input type="text" className="form-control" placeholder="First name" />
@@ -30,7 +30,7 @@ export const Signup = () => {
           placeholder="Enter password"
         />
       </div>
-      <button type="submit" className="btn btn-primary btn-block mt-3">
+      <button type="submit" className="btn btn-primary btn-block">
         Sign Up
       </button>
       <p className="forgot-password text-right">
