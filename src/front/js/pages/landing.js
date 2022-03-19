@@ -6,5 +6,11 @@ import Pricing from "../component/Pricing";
 import Header from "../component/Header";
 
 export const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <Pricing />
+      <Testimonials />
+    </>
+  );
 };
