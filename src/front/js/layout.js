@@ -1,17 +1,18 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/landing";
-import { Single } from "./pages/single";
-import { FAQ } from "./component/faq";
-import { SearchPage } from "./pages/searchPage"
+import {Home} from "./pages/landing";
+import {Single} from "./pages/single";
+import {FAQ} from "./component/faq";
+import {SearchPage} from "./pages/searchPage"
 import Login from "./pages/login";
-import { Signup } from "./pages/signup";
+import {Signup} from "./pages/signup";
+import Contacts from "./pages/contacts";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+import {Navbar} from "./component/navbar";
+import {Footer} from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -47,17 +48,17 @@ const Layout = () => {
                             <FAQ/>
                         </Route>
                         <Route exact path="/search">
-                            <SearchPage />
+                            <SearchPage/>
                         </Route>
                         <Route>
                             <h1>Not found!</h1>
                         </Route>
                     </Switch>
-                    <Footer />
+                    <Footer/>
                 </ScrollToTop>
             </BrowserRouter>
         </div>
-);
+    );
 };
 
 export default injectContext(Layout);
