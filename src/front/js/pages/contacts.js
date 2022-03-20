@@ -17,7 +17,7 @@ const Contacts = () => {
             <img
               src="https://images.pexels.com/photos/5691814/pexels-photo-5691814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               id="kids"
-            ></img>
+            />
           </Col>
           <Col>
             <p className="row-md col-6" id="mission">
