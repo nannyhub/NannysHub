@@ -43,7 +43,7 @@ const Layout = () => {
             <Route exact path="/faq">
               <FAQ />
             </Route>
-            <Route exact path="/searchpage">
+            <Route exact path="/search">
               <SearchPage />
             </Route>
             <Route>
