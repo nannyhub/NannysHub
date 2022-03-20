@@ -1,0 +1,33 @@
+#form {
+  padding: 15px;
+  margin-right: 10%;
+}
+
+#mission {
+  letter-spacing: 1px;
+  line-height: 1.8;
+  margin-left: 15%;
+}
+
+#contact {
+  margin-left: 10%;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+#titulo {
+  margin-left: 30%;
+  padding-top: 5px;
+}
+#call {
+  margin-left: 15%;
+  padding-top: 5px;
+}
+
+#button {
+  margin-left: 43%;
+}
+
+#kids {
+  width: 530px;
+}
