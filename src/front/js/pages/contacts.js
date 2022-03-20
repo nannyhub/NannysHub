@@ -25,7 +25,7 @@ const Contacts = () => {
               parent. At the begging, as a group, we decided to follow this
               vision, considering 2 out of 3 members are parents and feel very
               strongly motivated to improve the nanny and childcare industry.
-              Later on, we were joined by another memember who, despite not
+              Later on, we were joined by another member who, despite not
               having children, also shared our passion for the childcare
               industry, and dove in to help us in the completion of this project
             </p>
