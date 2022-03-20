@@ -7,6 +7,7 @@ import { Single } from "./pages/single";
 import { FAQ } from "./component/faq";
 import Login from "./pages/login";
 import { Signup } from "./pages/signup";
+import Contacts from "./pages/contacts";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -18,42 +19,42 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    return (
-        <div id="base-container">
-            <BrowserRouter basename={basename}>
-                <ScrollToTop>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/">
-                            <Home/>
-                        </Route>
-                        <Route exact path="/single/:theid">
-                            <Single/>
-                        </Route>
-                        <Route exact path="/login">
-                            <Login/>
-                        </Route>
-                        <Route exact path="/signup">
-                            <Signup/>
-                        </Route>
-                        <Route exact path="/contacts">
-                            <Contacts/>
-                        </Route>
-                        <Route exact path="/single/:theid">
-                            <Single/>
-                        </Route>
-                        <Route exact path="/faq">
-                            <FAQ/>
-                        </Route>
-                        <Route>
-                            <h1>Not found!</h1>
-                        </Route>
-                    </Switch>
-                    <Footer />
-                </ScrollToTop>
-            </BrowserRouter>
-        </div>
-);
+  return (
+    <div id="base-container">
+      <BrowserRouter basename={basename}>
+        <ScrollToTop>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/single/:theid">
+              <Single />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/contacts">
+              <Contacts />
+            </Route>
+            <Route exact path="/single/:theid">
+              <Single />
+            </Route>
+            <Route exact path="/faq">
+              <FAQ />
+            </Route>
+            <Route>
+              <h1>Not found!</h1>
+            </Route>
+          </Switch>
+          <Footer />
+        </ScrollToTop>
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default injectContext(Layout);
