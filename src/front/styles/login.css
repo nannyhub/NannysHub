@@ -8,5 +8,8 @@
 
 #sign {
   align-self: center;
-  margin-left: 180px;
+  margin-left: 43%;
+  background-color: black;
+  border: 1px;
+  border-color: black;
 }

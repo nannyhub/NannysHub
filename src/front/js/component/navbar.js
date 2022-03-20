@@ -1,19 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.css";
 
 export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav className="navbar navbar-light">
+      <div className="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            id="mary"
+            src="https://behindthecurtaincincy.files.wordpress.com/2015/07/voi_mary-poppins-logo.jpg"
+            alt=""
+          ></img>
+        </a>
+        <Link to="/">
+          <span className="navbar-brand mb-0 h1" id="title">
+            NannyHub
+          </span>
+        </Link>
+        <div className="ml-auto"></div>
+        <div className="justify-content-end">
+          <button type="button" className="btn" id="button1">
+            <Link to="/login">Login</Link>
+          </button>
+          <button type="button" className="btn" id="button2">
+            <Link to="/signup">Sign Up</Link>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
