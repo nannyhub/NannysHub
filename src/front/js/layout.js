@@ -1,17 +1,16 @@
 import React from "react";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import {Home} from "./pages/landing";
-import {Single} from "./pages/single";
-import {FAQ} from "./component/faq";
+import { Home } from "./pages/landing";
+import { Single } from "./pages/single";
+import { FAQ } from "./component/faq";
 import Login from "./pages/login";
-import {Signup} from "./pages/signup";
-import Contacts from "./pages/contacts";
+import { Signup } from "./pages/signup";
 import injectContext from "./store/appContext";
 
-import {Navbar} from "./component/navbar";
-import {Footer} from "./component/footer";
+import { Navbar } from "./component/navbar";
+import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
