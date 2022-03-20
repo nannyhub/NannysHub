@@ -2,10 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
+import { Home } from "./pages/landing";
 import { Single } from "./pages/single";
+import { FAQ } from "./component/faq";
 import Login from "./pages/login";
+import { Signup } from "./pages/signup";
 import Contacts from "./pages/contacts";
 import injectContext from "./store/appContext";
 
@@ -19,7 +20,7 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div>
+    <div id="base-container">
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
@@ -27,17 +28,22 @@ const Layout = () => {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/demo">
-              <Demo />
+            <Route exact path="/single/:theid">
+              <Single />
             </Route>
             <Route exact path="/login">
               <Login />
             </Route>
+            <Route exact path="/signup">
+              <Signup />
             <Route exact path="/contacts">
               <Contacts />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
+            </Route>
+            <Route exact path="/faq">
+              <FAQ />
             </Route>
             <Route>
               <h1>Not found!</h1>
