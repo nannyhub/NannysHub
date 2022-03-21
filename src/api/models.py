@@ -65,14 +65,14 @@ class Favorites(db.Model):
         }
 
 
-    class Nannys(db.Model):
+class Nannys(db.Model):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(200), nullable=False)
     last_name = Column(String(200), nullable=False)
     skills = Column(String(200), nullable=False)
     experience = Column(String(200), nullable=False)
     location = Column(String(200), nullable=False)
-    price = Float(Integer), nullable=False)
+    price = Float(Integer, nullable=False)
 
     def __repr__(self):
         return '<Nannys %r>' % self.nanny_id
@@ -90,7 +90,7 @@ class Favorites(db.Model):
 
 ##these last 2 tables and relationships need to be checked with teachers
 ##fixed
-    class Records(db.Model):
+class Records(db.Model):
     id = Column(Integer, primary_key=True)
     date= Column(String, nullable=False)
     nannys_id= Column(Integer, ForeignKey("nannys.id"))
