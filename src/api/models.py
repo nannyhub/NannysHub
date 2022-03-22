@@ -23,46 +23,24 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-# class Parents(db.Model):
-#     # Here we define columns for the table planet.
-#     # Notice that each column is also a normal Python instance attribute.
-#     id = Column(Integer, unique=True, primary_key=True)
-#     first_name = Column(String(200), nullable=False)
-#     last_name = Column(String(200), nullable=False)
-#     description= Column(String(180), nullable=False)
-#     number_of_children = Column(Integer, nullable=True)
-#     parents = relationship('User', backref='User', lazy=True)
-#     nannys = relationship('Nannys', backref='Nanny', lazy=True)
+class Parents(db.Model):
+    id = Column(Integer, unique=True, primary_key=True)
+    first_name = Column(String(200), nullable=False)
+    last_name = Column(String(200), nullable=False)
+    description= Column(String(180), nullable=False)
+    number_of_children = Column(Integer, nullable=True)
+    # parents = relationship('User', backref='User', lazy=True)
+    # nannys = relationship('Nannys', backref='Nanny', lazy=True)
 
-#     def __repr__(self):
-#         return '<Parents %r>' % self.first_name
+    def __repr__(self):
+        return '<Parents %r>' % self.first_name
 
-#     def serialize(self):
-#         return {
-#             "id": self.id, 
-#             "first_name": self.first_name,
-#             "last_name": self.last_name
-#         }
-
-
-
-# class Favorites(db.Model):
-#     id = Column(Integer, primary_key=True)
-#     parents_id = Column(Integer, ForeignKey('Parents.id')) 
-#     parents= relationship(Parents)
-#     nannys_id = Column(Integer, ForeignKey('Nannys.id'))
-#     nannys= relationship("Nannys")
-
-
-#     def __repr__(self):
-#         return '<Favorites %r>' % self.favorites_id
-
-#     def serialize(self):
-#         return {
-#             "id": self.id, 
-#             "parent_id": self.parents_id,
-#             "nanny_id": self.nannys_id
-#         }
+    def serialize(self):
+        return {
+            "id": self.id, 
+            "first_name": self.first_name,
+            "last_name": self.last_name
+        }
 
 
 # class Nannys(db.Model):
@@ -88,6 +66,23 @@ class User(db.Model):
 #             "price": self.price
 #         }
 
+# class Favorites(db.Model):
+#     id = Column(Integer, primary_key=True)
+    # parents_id = Column(Integer, ForeignKey('Parents.id')) 
+    # parents= relationship(Parents)
+    # nannys_id = Column(Integer, ForeignKey('Nannys.id'))
+    # nannys= relationship("Nannys")
+
+
+    # def __repr__(self):
+    #     return '<Favorites %r>' % self.favorites_id
+
+    # def serialize(self):
+    #     return {
+    #         "id": self.id, 
+    #         "parent_id": self.parents_id,
+    #         "nanny_id": self.nannys_id
+    #     }
 
 ##these last 2 tables and relationships need to be checked with teachers
 ##fixed
