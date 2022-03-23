@@ -26,6 +26,8 @@ api = Blueprint('api', __name__)
 @api.route("/signup", methods=["POST"])
 def create_user():
     body= request.get_json()
+    first_name= body.get("first name")
+    last_name= body.get("last name")
     email= body.get("email")
     password= body.get("password")
     

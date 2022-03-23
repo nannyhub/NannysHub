@@ -10,6 +10,8 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = Column(Integer, primary_key=True)
+    first_name = Column(String(100), unique=False)
+    last_name = Column(String(100), unique=False)
     email = Column(String(120), unique=True, nullable=False)
     password = Column(String(500), unique=False, nullable=False)
 
@@ -20,27 +22,29 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "firstname": self.first_name,
+            "last name": self.last_name
             # do not serialize the password, its a security breach
         }
 
-class Parents(db.Model):
-    id = Column(Integer, unique=True, primary_key=True)
-    first_name = Column(String(200), nullable=False)
-    last_name = Column(String(200), nullable=False)
-    description= Column(String(180), nullable=False)
-    number_of_children = Column(Integer, nullable=True)
-    # parents = relationship('User', backref='User', lazy=True)
-    # nannys = relationship('Nannys', backref='Nanny', lazy=True)
+# class Parents(db.Model):
+#     id = Column(Integer, unique=True, primary_key=True)
+#     first_name = Column(String(200), nullable=False)
+#     last_name = Column(String(200), nullable=False)
+#     description= Column(String(180), nullable=False)
+#     number_of_children = Column(Integer, nullable=True)
+#     # parents = relationship('User', backref='User', lazy=True)
+#     # nannys = relationship('Nannys', backref='Nanny', lazy=True)
 
-    def __repr__(self):
-        return '<Parents %r>' % self.first_name
+#     def __repr__(self):
+#         return '<Parents %r>' % self.first_name
 
-    def serialize(self):
-        return {
-            "id": self.id, 
-            "first_name": self.first_name,
-            "last_name": self.last_name
-        }
+#     def serialize(self):
+#         return {
+#             "id": self.id, 
+#             "first_name": self.first_name,
+#             "last_name": self.last_name
+#         }
 
 
 # class Nannys(db.Model):
