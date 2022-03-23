@@ -25,19 +25,22 @@ api = Blueprint('api', __name__)
 ##CREATE USER
 @api.route("/signup", methods=["POST"])
 def create_user():
-    email= (request.json.get("email"))
-    password= (request.json.get("password"))
+    body= request.get_json()
+    email= body.get("email")
+    password= body.get("password")
+    
+    print(email) 
+    print(password)
 
     if not email or not password:
-        return " you must fill both your email or password.", 400
+        return "you must fill both your email or password.", 400
 
     print(User.query.filter_by(email=email).first())
 
-    if User.query.filter_by(email=email).first != 0:
+    if User.query.filter_by(email=email).first() != None:
         return "this user already exists.", 409
 
     new_user = User(email=email, password=generate_password_hash(password))
     db.session.add(new_user)
     db.session.commit()
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    return "User has been created", 200
