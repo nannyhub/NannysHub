@@ -29,8 +29,6 @@ def create_user():
     email= body.get("email")
     password= body.get("password")
     
-    print(email) 
-    print(password)
 
     if not email or not password:
         return "you must fill both your email or password.", 400
