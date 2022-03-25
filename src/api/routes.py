@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, Nannys
+from api.models import db, Nanny
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -26,11 +26,17 @@ api = Blueprint('api', __name__)
 
 #     return jsonify(all_nannies), 200
 
+
 @api.route('/nannies', methods=['GET'])
 def getNannies():
-    nannys = Nanny.query.all()
-    all_nannys = list(map(lambda x: x.serialize(), nannys))
-    return jsonify(all_characters), 200    
+    nannys_list = Nanny.get_all()
+
+    if nannys_list:
+        all_nannies = [nanny.serialize()  for nanny in nannys_list]   
+        return jsonify(all_nannies), 200
+
+    return jsonify({'error': "No hay canguro"}), 404
+
 
 
 

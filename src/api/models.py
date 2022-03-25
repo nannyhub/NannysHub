@@ -47,28 +47,34 @@ class User(db.Model):
 #         }
 
 
-# class Nannys(db.Model):
-#     id = Column(Integer, primary_key=True)
-#     first_name = Column(String(200), nullable=False)
-#     last_name = Column(String(200), nullable=False)
-#     age = Column(Integer,nullable=False)
-#     skills = Column(String(200), nullable=True)
-#     experience = Column(String(200), nullable=False)
-#     location = Column(String(200), nullable=False)
-#     price = Column(Integer)
+class Nanny(db.Model):
+    id = Column(Integer, primary_key=True)
+    first_name = Column(String(200), nullable=False)
+    last_name = Column(String(200), nullable=False)
+    age = Column(Integer,nullable=False)
+    skills = Column(String(200), nullable=True)
+    experience = Column(String(200), nullable=False)
+    location = Column(String(200), nullable=False)
+    price = Column(Integer)
 
-#     def __repr__(self):
-#         return '<Nannys %r>' % self.nanny_id
+    def __repr__(self):
+        return '<Nannys %r>' % self.nanny_id
 
-#     def serialize(self):
-#         return {
-#             "first_name": self.first_name,
-#             "last_name": self.last_name,
-#             "skils": self.skills,
-#             "experience": self.experience,
-#             "location": self.location,
-#             "price": self.price
-#         }
+    def serialize(self):
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "skils": self.skills,
+            "experience": self.experience,
+            "location": self.location,
+            "price": self.price
+        }
+
+    @classmethod
+    def get_all(cls):
+        nannys = cls.query.all()
+        return nannys
+
 
 # class Favorites(db.Model):
 #     id = Column(Integer, primary_key=True)
