@@ -2,24 +2,42 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, Nanny
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from werkzeug.security import check_password_hash, generate_password_hash
 
+
 api = Blueprint('api', __name__)
 
 
-# @api.route('/hello', methods=['POST', 'GET'])
-# def handle_hello():
+
+# @api.route('/nannies', methods=['GET'])
+# def getNannies():
+#     query = Nannys.query.all()
+#     for i in query:
+#     list(serialize())    
 
 #     response_body = {
 #         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
 #     }
 
-#     return jsonify(response_body), 200
+#     return jsonify(all_nannies), 200
+
+
+@api.route('/nannies', methods=['GET'])
+def getNannies():
+    nannys_list = Nanny.get_all()
+
+    if nannys_list:
+        all_nannies = [nanny.serialize()  for nanny in nannys_list]   
+        return jsonify(all_nannies), 200
+
+    return jsonify({'error': "No hay canguro"}), 404
+
+
 
 
 ##CREATE USER
@@ -44,3 +62,4 @@ def create_user():
     db.session.add(new_user)
     db.session.commit()
     return "User has been created", 200
+
