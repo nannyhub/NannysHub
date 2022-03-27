@@ -1,6 +1,6 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float, DateTime, Numeric
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -52,6 +52,8 @@ class Nannys(db.Model):
     experience = Column(Integer, nullable=False)
     location = Column(String(200), nullable=False)
     price = Column(Integer)
+    longitude = Column(Numeric(20,10), nullable=True)
+    latitude = Column(Numeric(20,10), nullable=True)
 
     def __repr__(self):
         return '<Nannys %r>' % self.id
@@ -64,7 +66,9 @@ class Nannys(db.Model):
             "skils": self.skills,
             "experience": self.experience,
             "location": self.location,
-            "price": self.price
+            "price": self.price,
+            "longitude": self.longitude,
+            "latitude": self.latitude,
         }
 
 

@@ -42,22 +42,7 @@ export const SearchPage = () => {
   }, []);
 
   const [searchByInfo, setSearchByInfo] = useState({});
-  const [nannyList, setNannyList] = useState([]);
   const { store, actions } = useContext(Context);
-  const applyFilter = async () => {
-    const response = await fetch(
-      "https://3001-nannyhub-nannyshub-vsm3fp1e71f.ws-eu38.gitpod.io/api/search-nannies",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(searchByInfo),
-      }
-    );
-    const data = await response.json();
-    setNannyList(data.response);
-  };
 
   return (
     <Container className="bar">
@@ -120,7 +105,7 @@ export const SearchPage = () => {
           <Col>
             <Button
               onClick={() => {
-                applyFilter();
+                actions.getNannyApplyFilter(searchByInfo);
               }}
             >
               Test
@@ -136,7 +121,7 @@ export const SearchPage = () => {
             valueLabelDisplay="auto"
           />
         </div>
-        {nannyList.map((item) => {
+        {store.nannyList.map((item) => {
           return (
             //add cards for the items. item = Nannys.serialize
             <div>
