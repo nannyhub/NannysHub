@@ -27,6 +27,28 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+    def set_token(self, token):
+        self.token = token
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def lookup(cls, email):
+        user = cls.query.filter_by(email=email).one_or_none()
+        return user
+
+    @classmethod
+    def identify(cls, id):
+        return cls.query.get(id)
+
+    @property
+    def identity(self):
+        return self.id
+
+    def __repr__(self):
+        return '<User %r>' % self.email
+    
+
 # class Parents(db.Model):
 #     id = Column(Integer, unique=True, primary_key=True)
 #     first_name = Column(String(200), nullable=False)
@@ -47,28 +69,28 @@ class User(db.Model):
 #         }
 
 
-# class Nannys(db.Model):
-#     id = Column(Integer, primary_key=True)
-#     first_name = Column(String(200), nullable=False)
-#     last_name = Column(String(200), nullable=False)
-#     age = Column(Integer,nullable=False)
-#     skills = Column(String(200), nullable=True)
-#     experience = Column(String(200), nullable=False)
-#     location = Column(String(200), nullable=False)
-#     price = Column(Integer)
+class Nanny(db.Model):
+    id = Column(Integer, primary_key=True)
+    first_name = Column(String(200), nullable=False)
+    last_name = Column(String(200), nullable=False)
+    age = Column(Integer,nullable=False)
+    skills = Column(String(200), nullable=True)
+    experience = Column(String(200), nullable=False)
+    location = Column(String(200), nullable=False)
+    price = Column(Integer)
 
-#     def __repr__(self):
-#         return '<Nannys %r>' % self.nanny_id
+    def __repr__(self):
+        return '<Nanny %r>' % self.nanny_id
 
-#     def serialize(self):
-#         return {
-#             "first_name": self.first_name,
-#             "last_name": self.last_name,
-#             "skils": self.skills,
-#             "experience": self.experience,
-#             "location": self.location,
-#             "price": self.price
-#         }
+    def serialize(self):
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "skils": self.skills,
+            "experience": self.experience,
+            "location": self.location,
+            "price": self.price
+        }
 
 # class Favorites(db.Model):
 #     id = Column(Integer, primary_key=True)
