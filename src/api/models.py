@@ -27,6 +27,28 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+    def set_token(self, token):
+        self.token = token
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def lookup(cls, email):
+        user = cls.query.filter_by(email=email).one_or_none()
+        return user
+
+    @classmethod
+    def identify(cls, id):
+        return cls.query.get(id)
+
+    @property
+    def identity(self):
+        return self.id
+
+    def __repr__(self):
+        return '<User %r>' % self.email
+    
+
 # class Parents(db.Model):
 #     id = Column(Integer, unique=True, primary_key=True)
 #     first_name = Column(String(200), nullable=False)
@@ -58,7 +80,7 @@ class Nanny(db.Model):
     price = Column(Integer)
 
     def __repr__(self):
-        return '<Nannys %r>' % self.nanny_id
+        return '<Nanny %r>' % self.nanny_id
 
     def serialize(self):
         return {
@@ -74,7 +96,6 @@ class Nanny(db.Model):
     def get_all(cls):
         nannys = cls.query.all()
         return nannys
-
 
 # class Favorites(db.Model):
 #     id = Column(Integer, primary_key=True)
