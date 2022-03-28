@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, Nanny
+from api.models import db, User, Nanny
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -49,6 +49,23 @@ def create_user():
     db.session.add(new_user)
     db.session.commit()
     return "User has been created", 200
+
+
+##Filtering data
+@api.route("/search-nannies", methods=["POST"])
+def search_nannies():
+    location= request.json.get("location")
+    price= request.json.get("price")
+    experience= request.json.get("experience")
+    queries = []
+    if location:
+        queries.append(Nanny.location == location)
+    if price and price!="":
+        queries.append(Nanny.price <= int(price))
+    if experience and experience!="":
+        queries.append(Nanny.experience >= int(experience))
+    nannies = Nanny.query.filter(*queries)
+    return jsonify({"response":list(map(lambda nanny:nanny.serialize(),nannies))})
 
     # Create a route to authenticate your users and return JWTs. The
     # create_access_token() function is used to actually generate the JWT.
