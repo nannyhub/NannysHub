@@ -23,6 +23,28 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+    def set_token(self, token):
+        self.token = token
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def lookup(cls, email):
+        user = cls.query.filter_by(email=email).one_or_none()
+        return user
+
+    @classmethod
+    def identify(cls, id):
+        return cls.query.get(id)
+
+    @property
+    def identity(self):
+        return self.id
+
+    def __repr__(self):
+        return '<User %r>' % self.email
+    
+
 # class Parents(db.Model):
 #     id = Column(Integer, unique=True, primary_key=True)
 #     first_name = Column(String(200), nullable=False)
@@ -30,7 +52,7 @@ class User(db.Model):
 #     description= Column(String(180), nullable=False)
 #     number_of_children = Column(Integer, nullable=True)
 #     # parents = relationship('User', backref='User', lazy=True)
-#     # nannys = relationship('Nannys', backref='Nanny', lazy=True)
+#     # nannys = relationship('Nanny', backref='Nanny', lazy=True)
 
 #     def __repr__(self):
 #         return '<Parents %r>' % self.first_name
@@ -43,7 +65,7 @@ class User(db.Model):
 #         }
 
 
-class Nannys(db.Model):
+class Nanny(db.Model):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(200), nullable=False)
     last_name = Column(String(200), nullable=False)
@@ -56,7 +78,7 @@ class Nannys(db.Model):
     latitude = Column(Numeric(20,10), nullable=True)
 
     def __repr__(self):
-        return '<Nannys %r>' % self.id
+        return '<Nanny %r>' % self.id
 
     def serialize(self):
         return {
@@ -76,8 +98,8 @@ class Nannys(db.Model):
 #     id = Column(Integer, primary_key=True)
     # parents_id = Column(Integer, ForeignKey('Parents.id')) 
     # parents= relationship(Parents)
-    # nannys_id = Column(Integer, ForeignKey('Nannys.id'))
-    # nannys= relationship("Nannys")
+    # nannys_id = Column(Integer, ForeignKey('Nanny.id'))
+    # nannys= relationship("Nanny")
 
 
     # def __repr__(self):
@@ -96,7 +118,7 @@ class Nannys(db.Model):
 #     id = Column(Integer, primary_key=True)
 #     date= Column(String, nullable=False)
 #     nannys_id= Column(Integer, ForeignKey("nannys.id"))
-#     nannys= relationship(Nannys)
+#     nannys= relationship(Nanny)
 #     parents_id= Column(Integer, ForeignKey("parents.id"))
 #     parents= relationship(Parents)
 
@@ -116,7 +138,7 @@ class Nannys(db.Model):
 #     id = Column(Integer, primary_key=True)
 #     score= Column(Integer, nullable=False)
 #     nanny_id= Column(Integer, ForeignKey("nannys.id"))
-#     nanny= relationship(Nannys)
+#     nanny= relationship(Nanny)
 #     parents_id= Column(Integer, ForeignKey("parents.id"))
 #     parents= relationship(Parents)
 

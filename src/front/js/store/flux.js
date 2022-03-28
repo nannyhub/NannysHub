@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       nannyList: [],
+      nanny: [],
+
     },
     actions: {
       getNannyApplyFilter: async (searchByInfo) => {
@@ -17,6 +19,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({ nannyList: data.response });
+    },
+      // Use getActions to call a function within a fuction
+      getNannies: () => {
+        fetch(
+          "https://nannyhub-nannyshub-79jxz11ahr8.ws-eu38.gitpod.io/api/nannies"
+        )
+          .then((resp) => resp.json())
+          .then((data) => setStore({ nanny: data }))
+          .catch((error) => console.log("Error retrieving Nanny", error));
       },
     },
   };
