@@ -14,19 +14,6 @@ api = Blueprint('api', __name__)
 
 
 
-# @api.route('/nannies', methods=['GET'])
-# def getNannies():
-#     query = Nannys.query.all()
-#     for i in query:
-#     list(serialize())    
-
-#     response_body = {
-#         "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-#     }
-
-#     return jsonify(all_nannies), 200
-
-
 @api.route('/nannies', methods=['GET'])
 def getNannies():
     nannys_list = Nanny.get_all()
@@ -72,25 +59,12 @@ def login():
         return jsonify({"error": "Body is empty or null"}), 400
     email = body['email']
     password = body['password']
-    # 1. read mail & pass
-    # email = request.json.get("email", None)
-    # password = request.json.get("password", None)
-    # password_hash = generate_password_hash(password) # removed #
     user = User.lookup(email)
-    # 2 check error
     if user and check_password_hash(user.password, password):
-    # 3. return token
         access_token = create_access_token(identity=email)
         return jsonify({'token' : access_token}), 200
     else:
         return {'error': 'user and pass not valid'}, 400
-
-@api.route('/refresh', methods=['POST'])
-def refresh():
-    print("refresh request")
-    old_token = request.get_data()
-    new_token = guard.refresh_jwt_token(old_token)
-    return {'access_token': new_token}, 200
 
 # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.
