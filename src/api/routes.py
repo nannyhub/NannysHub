@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, Nanny
+from api.models import db, Nanny, User
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -31,8 +31,8 @@ def getNannies():
 @api.route("/signup", methods=["POST"])
 def create_user():
     body= request.get_json()
-    first_name= body.get("first name")
-    last_name= body.get("last name")
+    first_name= body.get("first_name")
+    last_name= body.get("last_name")
     email= body.get("email")
     password= body.get("password")
     

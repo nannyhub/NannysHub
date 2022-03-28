@@ -3,9 +3,27 @@ import { Link } from "react-router-dom";
 import "../../styles/signup.css";
 
 export const Signup = () => {
+  fetch(
+    "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",
+    {
+      method: "POST",
+      body: {
+        first_name: "first_name",
+        last_name: "last_name",
+        email: "email",
+        password: "password",
+      },
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
   return (
     <form className="d-flex flex-column align-items-center">
-      <h3 className="mt-3" >Sign Up</h3>
+      <h3 className="mt-3">Sign Up</h3>
       <div className="form-group">
         <label>First name</label>
         <input type="text" className="form-control" placeholder="First name" />
