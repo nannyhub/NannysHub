@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img
             id="mary"
             src="https://behindthecurtaincincy.files.wordpress.com/2015/07/voi_mary-poppins-logo.jpg"
@@ -23,7 +23,7 @@ export const Navbar = () => {
           <button type="button" className="btn" id="button1">
             <Link to="/login">Login</Link>
           </button>
-          <button type="button" className="btn btn-light" id="button2">
+          <button type="button" className="btn" id="button2">
             <Link to="/signup">Sign Up</Link>
           </button>
         </div>

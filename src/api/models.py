@@ -92,6 +92,11 @@ class Nanny(db.Model):
             "price": self.price
         }
 
+    @classmethod
+    def get_all(cls):
+        nannys = cls.query.all()
+        return nannys
+
 # class Favorites(db.Model):
 #     id = Column(Integer, primary_key=True)
     # parents_id = Column(Integer, ForeignKey('Parents.id')) 
