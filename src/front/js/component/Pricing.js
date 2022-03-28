@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../styles/Pricing.css";
 
 const Pricing = () => {
@@ -13,7 +14,9 @@ const Pricing = () => {
             <li>1 child</li>
             <li>Full babysitter´s details </li>
             <li className="grey">
-              <button className="button">Sign Up</button>
+              <button className="button">
+                <Link to="/signup">Sign Up</Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -28,7 +31,9 @@ const Pricing = () => {
             <li>2 Children</li>
             <li>-10% over babysitter's price per h. </li>
             <li className="grey">
-              <button className="button">Sign Up</button>
+              <button className="button">
+                <Link to="/signup">Sign Up</Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -41,7 +46,9 @@ const Pricing = () => {
             <li>+3 Children</li>
             <li>-20% over babysitter's price per h.</li>
             <li className="grey">
-              <button className="button">Sign Up</button>
+              <button className="button">
+                <Link to="/signup">Sign Up</Link>
+              </button>
             </li>
           </ul>
         </div>

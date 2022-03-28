@@ -5,8 +5,8 @@ export const Footer = () => {
   return (
     <>
       <footer className="page-footer font-small blue pt-4">
-        <div id="links" class="container text-center">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div id="links" className="container text-center">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
               <Link to="/login">
                 <h6>Log In</h6>
