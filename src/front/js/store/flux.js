@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         )
           .then((resp) => resp.json())
           .then((data) => setStore({ nanny: data }))
-          .catch((error) => console.log("Baby is crying", error));
+          .catch((error) => console.log("Error retrieving Nanny", error));
       },
     },
   };
