@@ -18,29 +18,33 @@ export const Signup = () => {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="Last name"
-        {...register("Last name", { required: true, maxLength: 100 })}
-      />
+    <form onSubmit={handleSubmit(onSubmit)} id="box">
       <input
         type="text"
         placeholder="First name"
         {...register("First name", { required: true, maxLength: 80 })}
+        id="input1"
+      />
+      <input
+        type="text"
+        placeholder="Last name"
+        {...register("Last name", { required: true, maxLength: 100 })}
+        id="input2"
       />
       <input
         type="text"
         placeholder="Email"
         {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+        id="input3"
       />
       <input
         type="password"
         placeholder="Password"
         {...register("Password", { required: true, maxLength: 12 })}
+        id="input3"
       />
 
-      <input type="submit" />
+      <input type="submit" id="buton" />
     </form>
   );
   // fetch(

@@ -52,3 +52,36 @@ span {
 .forgot-password a {
   color: #167bff;
 }
+
+#box {
+  width: 200px;
+  height: 400px;
+  margin-left: 45%;
+}
+
+#input1 {
+  margin-top: 20px;
+  height: 40px;
+}
+
+#input2 {
+  margin-top: 20px;
+  height: 40px;
+}
+
+#input3 {
+  margin-top: 20px;
+  height: 40px;
+}
+
+#input4 {
+  margin-top: 20px;
+  height: 40px;
+}
+
+#buton {
+  margin-top: 20px;
+  margin-left: 60px;
+  background-color: black;
+  color: #ffffff;
+}
