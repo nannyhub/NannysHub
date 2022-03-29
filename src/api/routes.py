@@ -31,24 +31,24 @@ def getNannies():
 @api.route("/signup", methods=["POST"])
 def create_user():
     body= request.get_json()
-    first_name= body.get("first_name")
-    last_name= body.get("last_name")
-    email= body.get("email")
-    password= body.get("password")
+    first_name= body.get("First name")
+    last_name= body.get("Last name")
+    email= body.get("Email")
+    password= body.get("Password")
     
 
-    if not email or not password:
-        return "you must fill both your email or password.", 400
+    if not (email and password):
+        return{"error":"you must fill both your email or password."}, 400
 
     print(User.query.filter_by(email=email).first())
 
     if User.query.filter_by(email=email).first() != None:
-        return "this user already exists.", 409
+        return{"error":"this user already exists."}, 409
 
     new_user = User(email=email, password=generate_password_hash(password))
     db.session.add(new_user)
     db.session.commit()
-    return "User has been created", 200
+    return{"msg": "User has been created"}, 200
 
     # Create a route to authenticate your users and return JWTs. The
     # create_access_token() function is used to actually generate the JWT.
