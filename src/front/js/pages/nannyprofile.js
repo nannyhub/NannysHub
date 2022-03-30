@@ -12,7 +12,7 @@ export const Nannyprofile = () => {
   useEffect(() => {
     console.log(!store.nanny.length);
     if (!store.nanny.length) {
-      actions.getsingleNanny(params.theid);
+      actions.getsingleNanny(params.id);
     }
   }, []);
   return (
