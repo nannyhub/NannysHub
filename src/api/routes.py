@@ -30,7 +30,7 @@ def getNannies():
 @api.route('/nannies/<int:id>', methods=['GET'])
 def get_nannyprofile(id):
     nannyprofile = Nanny.query.filter_by(id=id).first()
-    return jsonify(Nanny.serialize()), 200
+    return jsonify(nannyprofile.serialize()), 200
 
 
 
