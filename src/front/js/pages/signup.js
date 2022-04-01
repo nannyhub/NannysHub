@@ -1,6 +1,7 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import "../../styles/signup.css";
 import { useForm } from "react-hook-form";
 
@@ -61,14 +62,16 @@ export const Signup = () => {
               type="password"
               placeholder="Password"
               {...register("Password", { required: true, maxLength: 12 })}
-              id="input3"
+              id="input4"
             />
 
-            <input type="submit" id="buton" />
+            <input type="submit" placeholder="Submit" id="bb" />
           </form>
-          ;
         </Col>
       </Row>
+      <div className="banner">
+        <br></br>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img
             id="mary"
             src="https://cdn.dribbble.com/users/2068059/screenshots/5856152/attachments/1261679/child_care_logo_by_visual_curve_02.png?compress=1&resize=800x600&vertical=top"

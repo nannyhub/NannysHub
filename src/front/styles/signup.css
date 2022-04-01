@@ -54,8 +54,22 @@ p {
   padding: 0%;
 }
 #register {
-  width: 300px;
+  width: 500px;
+  background-color: #f7f5f2;
+  margin-left: 15px;
+  height: 750px;
 }
+
+#pg {
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-size: medium;
+  align-self: center;
+  margin-left: 25%;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
 #bb {
   background-color: #b3541e;
   outline-color: #361500;
@@ -66,26 +80,38 @@ p {
   font-family: "IBM Plex Sans", sans-serif;
 }
 form {
-  width: 400px;
-  font-family: "IBM Plex Sans", sans-serif;
-}
-#email {
-  margin-left: 40%;
-  width: fit-content;
+  width: 300px;
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-#pass {
+#input1 {
   margin-left: 40%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
-}
-#pg {
-  text-align: center;
-  font-family: "Libre Baskerville", serif;
+  margin-bottom: 15px;
   font-size: medium;
-  align-self: center;
-  margin-left: 56%;
-  margin-bottom: 20px;
-  width: 200px;
+}
+
+#input2 {
+  margin-left: 40%;
+  width: fit-content;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 15px;
+  font-size: medium;
+}
+
+#input3 {
+  margin-left: 40%;
+  width: fit-content;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 15px;
+  font-size: medium;
+}
+
+#input4 {
+  margin-left: 40%;
+  width: fit-content;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 15px;
+  font-size: medium;
 }
