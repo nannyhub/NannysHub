@@ -1,8 +1,9 @@
 const BASE_URL =
-  "https://nannyhub-nannyshub-8q9pa35cvws.ws-eu38.gitpod.io/api/";
+  "https://3001-nannyhub-nannyshub-6ntl7vyx412.ws-us38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      nannies: [],
       nannyList: [],
       nanny: [],
     },
@@ -22,12 +23,34 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ nannyList: data.response });
       },
       // Use getActions to call a function within a fuction
-      getsingleNanny: () => {
-        fetch(`${BASE_URL}nannies`)
+      getNannies: (nannyId) => {
+        fetch(`${BASE_URL}/nannies/`)
           .then((resp) => resp.json())
-          .then((data) => setStore({ nanny: data }))
+          .then((data) => getActions().setNannies(data))
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
+      getsingleNanny: (nannyId) => {
+        let localNannies = getActions().getLocalNannies();
+
+        fetch(`${BASE_URL}/nannies/${nannyId}`)
+          .then((resp) => resp.json())
+          .then((data) => getActions().setNannies([...localNannies, data]))
+          .catch((error) => console.log("Error retrieving Nanny", error));
+      },
+      setNannies: (nannies) => {
+        let store = getStore();
+        setStore({ ...store, nannies: nannies });
+      },
+      setNanny: (nanny) => {
+        let nannies = getStore().nannies.concat(nanny);
+        getActions().setNannies(nannies);
+      },
+      getLocalNanny: (nannyId) => {
+        let store = getStore();
+        return store.nannies.filter((nanny) => nanny.id == nannyId);
+      },
+      getLocalNannies: () => {
+        return getStore().nannies;
       signUp: (data) => {
         fetch(
           "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",

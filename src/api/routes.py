@@ -16,7 +16,7 @@ api = Blueprint('api', __name__)
 
 @api.route('/nannies', methods=['GET'])
 def getNannies():
-    nannys_list = Nanny.get_all()
+    nannys_list = Nanny.query.all()
 
     if nannys_list:
         all_nannies = [nanny.serialize()  for nanny in nannys_list]   
@@ -24,6 +24,13 @@ def getNannies():
 
     return jsonify({'error': "No hay canguro"}), 404
 
+
+
+#get_Nanny by ID
+@api.route('/nannies/<int:id>', methods=['GET'])
+def get_nannyprofile(id):
+    nannyprofile = Nanny.query.filter_by(id=id).first()
+    return jsonify(nannyprofile.serialize()), 200
 
 
 
