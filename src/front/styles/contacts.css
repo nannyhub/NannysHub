@@ -17,7 +17,7 @@
 
 #titulo {
   margin-left: 30%;
-  padding-top: 5px;
+  padding-top: 8px;
 }
 #call {
   margin-left: 15%;
@@ -26,6 +26,10 @@
 
 #button {
   margin-left: 43%;
+  background-color: #b3541e;
+  color: white;
+  font-family: "IBM Plex Sans", sans-serif;
+  outline-color: #361500;
 }
 
 #kids {

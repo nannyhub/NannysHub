@@ -8,6 +8,10 @@ import { Container, Row, Col } from "react-bootstrap";
 const Contacts = () => {
   return (
     <>
+      <div className="header" id="header">
+        <h1>NannyHub</h1>
+        <p>Things are better with Mary</p>
+      </div>
       <div className="text-center" id="titulo">
         <h3> Our Mission</h3>
       </div>
@@ -25,9 +29,9 @@ const Contacts = () => {
               parent. At the begging, as a group, we decided to follow this
               vision, considering 2 out of 3 members are parents and feel very
               strongly motivated to improve the nanny and childcare industry.
-              Later on, we were joined by another member who, despite not
-              having children, also shared our passion for the childcare
-              industry, and dove in to help us in the completion of this project
+              Later on, we were joined by another member who, despite not having
+              children, also shared our passion for the childcare industry, and
+              dove in to help us in the completion of this project
             </p>
           </Col>
         </Row>
@@ -61,7 +65,7 @@ const Contacts = () => {
               <Form.Group className="mb-3" controlId="formMessage" id="message">
                 <Form.Control type="message" placeholder=" Add your message" />
               </Form.Group>
-              <Button variant="primary" type="submit" id="button">
+              <Button type="submit" id="button">
                 Submit
               </Button>
             </Form>
