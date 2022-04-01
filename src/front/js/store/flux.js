@@ -51,6 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getLocalNannies: () => {
         return getStore().nannies;
+      },
       signUp: (data) => {
         fetch(
           "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",

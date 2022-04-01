@@ -6,18 +6,13 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a class="navbar-brand" href="#">
           <img
             id="mary"
-            src="https://behindthecurtaincincy.files.wordpress.com/2015/07/voi_mary-poppins-logo.jpg"
+            src="https://cdn.dribbble.com/users/2068059/screenshots/5856152/attachments/1261679/child_care_logo_by_visual_curve_02.png?compress=1&resize=800x600&vertical=top"
             alt=""
           ></img>
         </a>
-        <Link to="/">
-          <span className="navbar-brand mb-0 h1" id="title">
-            NannyHub
-          </span>
-        </Link>
         <div className="ml-auto"></div>
         <div className="justify-content-end">
           <button type="button" className="btn" id="button1">

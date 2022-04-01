@@ -1,87 +1,91 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
-/* * {
-  box-sizing: border-box;
-} */
-
-span {
-  font-weight: 500;
-  font-family: "Fira Sans", sans-serif;
+/* 
+    General Styles
+*/
+h1,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
 }
 
-.auth-wrapper {
+h1 {
+  font-size: 2.8em;
+  padding: 10px 0;
+  font-weight: 800;
+}
+
+p {
+  font-size: 1.1em;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+
+.header {
   width: 100%;
-  height: 100%;
-}
-
-.auth-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: left;
-}
-.auth-inner {
-  width: 450px;
-  margin: auto;
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all 0.3s;
-}
-.auth-wrapper .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
-}
-.auth-wrapper h3 {
+  padding: 60px 0;
   text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-.custom-control-label {
-  font-weight: 400;
-}
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-.forgot-password a {
-  color: #167bff;
+  background: white;
+  color: #b3541e;
 }
 
-#box {
+.btn-bgstroke {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.btn-bgstroke:hover {
+  background-color: white;
+  color: #f7f5f2;
+}
+
+#header {
+  width: auto;
+  height: 200px;
+}
+#hand {
+  width: auto;
+  padding: 0%;
+}
+#register {
+  width: 300px;
+}
+#bb {
+  background-color: #b3541e;
+  outline-color: #361500;
+  color: white;
+  border-radius: 5px;
+  margin-left: 60%;
+  margin-top: 15px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+form {
+  width: 400px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#email {
+  margin-left: 40%;
+  width: fit-content;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+#pass {
+  margin-left: 40%;
+  width: fit-content;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#pg {
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
+  font-size: medium;
+  align-self: center;
+  margin-left: 56%;
+  margin-bottom: 20px;
   width: 200px;
-  height: 400px;
-  margin-left: 45%;
-}
-
-#input1 {
-  margin-top: 20px;
-  height: 40px;
-}
-
-#input2 {
-  margin-top: 20px;
-  height: 40px;
-}
-
-#input3 {
-  margin-top: 20px;
-  height: 40px;
-}
-
-#input4 {
-  margin-top: 20px;
-  height: 40px;
-}
-
-#buton {
-  margin-top: 20px;
-  margin-left: 60px;
-  background-color: black;
-  color: #ffffff;
 }

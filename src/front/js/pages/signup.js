@@ -18,33 +18,57 @@ export const Signup = () => {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} id="box">
-      <input
-        type="text"
-        placeholder="First name"
-        {...register("First name", { required: true, maxLength: 80 })}
-        id="input1"
-      />
-      <input
-        type="text"
-        placeholder="Last name"
-        {...register("Last name", { required: true, maxLength: 100 })}
-        id="input2"
-      />
-      <input
-        type="text"
-        placeholder="Email"
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-        id="input3"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        {...register("Password", { required: true, maxLength: 12 })}
-        id="input3"
-      />
+    <div>
+      <div className="header" id="header">
+        <h1>NannyHub</h1>
+        <p>Things are better with Mary</p>
+      </div>
+      <Row className="d-flex">
+        <Col className="col-4" id="hand">
+          <img src="https://images.pexels.com/photos/6393346/pexels-photo-6393346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+        </Col>
+        <Col className="col-4">
+          <img src="https://images.pexels.com/photos/6393180/pexels-photo-6393180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+        </Col>
+        <Col className="col-4" id="register">
+          <div id="pg">
+            <p>
+              Are you a parent looking for your very own Mary Poppins? If you'd
+              like to use our services please fill this form to sign up and
+              start looking for a nanny
+            </p>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)} id="box">
+            <input
+              type="text"
+              placeholder="First name"
+              {...register("First name", { required: true, maxLength: 80 })}
+              id="input1"
+            />
+            <input
+              type="text"
+              placeholder="Last name"
+              {...register("Last name", { required: true, maxLength: 100 })}
+              id="input2"
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+              id="input3"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              {...register("Password", { required: true, maxLength: 12 })}
+              id="input3"
+            />
 
-      <input type="submit" id="buton" />
-    </form>
+            <input type="submit" id="buton" />
+          </form>
+          ;
+        </Col>
+      </Row>
+    </div>
   );
 };
