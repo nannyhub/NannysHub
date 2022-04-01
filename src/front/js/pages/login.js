@@ -4,6 +4,10 @@ import "../../styles/login.css";
 const Login = () => {
   return (
     <>
+      <div className="header" id="header">
+        <h1>NannyHub</h1>
+        <p>Things are better with Mary</p>
+      </div>
       <div className="container-fluid col-4">
         <div className="text-center mt-5">
           <img
@@ -11,7 +15,7 @@ const Login = () => {
             id="avatar"
           ></img>
         </div>
-        <div className="container fluid justify-content-center">
+        <div className="container fluid justify-content-center" id="formulario">
           <form>
             {/* <!-- Email input --> */}
             <div class="form-outline mb-4">
@@ -66,26 +70,35 @@ const Login = () => {
             {/* <!-- Register buttons --> */}
             <div class="text-center">
               <p>
-                Not a member? <a href="#!">Register</a>
+                Not a member? <a href="/signup">Register</a>
               </p>
               <p>or sign up with:</p>
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
-              </button>
+              <div id="socials">
+                <button
+                  type="button"
+                  class="btn btn-floating mx-1"
+                  id="facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-google"></i>
-              </button>
+                <button type="button" class="btn btn-floating mx-1" id="google">
+                  <i class="fab fa-google"></i>
+                </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
-              </button>
+                <button type="button" class="btn btn-floating mx-1" id="twitt">
+                  <i class="fab fa-twitter"></i>
+                </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-github"></i>
-              </button>
+                <button type="button" class="btn  btn-floating mx-1" id="git">
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
             </div>
           </form>
+        </div>
+        <div>
+          <br></br>
         </div>
       </div>
     </>

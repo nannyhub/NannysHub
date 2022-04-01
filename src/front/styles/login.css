@@ -1,6 +1,6 @@
 #avatar {
-  height: 250px;
-  width: 250px;
+  height: 240px;
+  width: 240px;
   border-radius: 50%;
   margin: auto;
   padding: 15px;
@@ -9,7 +9,27 @@
 #sign {
   align-self: center;
   margin-left: 43%;
-  background-color: black;
+  background-color: #b3541e;
   border: 1px;
-  border-color: black;
+  border-color: #b3541e;
+}
+#socials {
+  margin-left: 10%;
+}
+
+#formulario {
+  margin-left: 20%;
+}
+#facebook {
+  background-color: #b3541e;
+}
+
+#google {
+  background-color: #b3541e;
+}
+#twitt {
+  background-color: #b3541e;
+}
+#git {
+  background-color: #b3541e;
 }
