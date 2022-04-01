@@ -5,7 +5,6 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       nannyList: [],
       nanny: [],
-
     },
     actions: {
       getNannyApplyFilter: async (searchByInfo) => {
@@ -21,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({ nannyList: data.response });
-    },
+      },
       // Use getActions to call a function within a fuction
       getsingleNanny: () => {
         fetch(`${BASE_URL}nannies`)
@@ -43,7 +42,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((response) => response.json())
           .then((result) => {
             console.log(result);
-            // localStorage.setItem("jwt-token", result.token);
           })
           .catch((error) => console.log("error", error));
       },
