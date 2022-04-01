@@ -11,7 +11,7 @@ db = SQLAlchemy()
 class User(db.Model):
     id = Column(Integer, primary_key=True)
     email = Column(String(120), unique=True, nullable=False)
-    password = Column(String(80), unique=False, nullable=False)
+    password = Column(String(500), unique=False, nullable=False)
 
     def __repr__(self):
         return '<User %r>' % self.email
@@ -20,6 +20,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "first_name": self.first_name,
+            "last_name": self.last_name
             # do not serialize the password, its a security breach
         }
 

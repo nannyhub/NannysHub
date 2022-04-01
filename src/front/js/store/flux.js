@@ -4,6 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       nannies: [],
+      nannyList: [],
+      nanny: [],
     },
     actions: {
       getNannyApplyFilter: async (searchByInfo) => {
@@ -49,6 +51,22 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getLocalNannies: () => {
         return getStore().nannies;
+      signUp: (data) => {
+        fetch(
+          "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => console.log("error", error));
       },
     },
   };
