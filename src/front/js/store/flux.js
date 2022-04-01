@@ -1,11 +1,11 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-6ntl7vyx412.ws-us38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-7cvcpg5ab0a.ws-eu38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       nannies: [],
       nannyList: [],
-      nanny: [],
+      nanny: {},
     },
     actions: {
       getNannyApplyFilter: async (searchByInfo) => {
@@ -30,11 +30,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
       getsingleNanny: (nannyId) => {
-        let localNannies = getActions().getLocalNannies();
-
+        // let localNannies = getActions().getLocalNannies();
         fetch(`${BASE_URL}/nannies/${nannyId}`)
           .then((resp) => resp.json())
-          .then((data) => getActions().setNannies([...localNannies, data]))
+          .then((data) => setStore({ nanny: data }))
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
       setNannies: (nannies) => {
@@ -51,9 +50,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getLocalNannies: () => {
         return getStore().nannies;
+      },
       signUp: (data) => {
         fetch(
-          "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",
+          "https://3001-nannyhub-nannyshub-7cvcpg5ab0a.ws-eu38.gitpod.io/api/signup",
           {
             method: "POST",
             body: JSON.stringify(data),
