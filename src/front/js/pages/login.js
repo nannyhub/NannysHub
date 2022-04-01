@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/login.css";
 
 const Login = () => {
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
+  const changeHandler = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const changeHandlerPassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  console.log("This is your token", store.token);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    actions.login(email, password);
+    console.log("test Click");
+  };
+
+  if (store.token && store.token != "" && store.token != undefined)
+    history.push("/search");
+
   return (
     <>
       <div className="container-fluid col-4">
@@ -12,77 +38,61 @@ const Login = () => {
           ></img>
         </div>
         <div className="container fluid justify-content-center">
-          <form>
+          <form onSubmit={handleSubmit}>
             {/* <!-- Email input --> */}
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">
+            <div className="form-outline mb-4">
+              <input
+                type="text"
+                placeholder="email"
+                value={email}
+                onChange={changeHandler}
+              ></input>
+              <label className="form-label" htmlFor="form2Example1">
                 Email address
               </label>
             </div>
 
             {/* <!-- Password input --> */}
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">
+            <div className="form-outline mb-4">
+              <input
+                type="text"
+                placeholder="password"
+                value={password}
+                onChange={changeHandlerPassword}
+              ></input>
+              <label className="form-label" htmlFor="form2Example2">
                 Password
               </label>
             </div>
-
-            {/* <!-- 2 column grid layout for inline styling --> */}
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                {/* <!-- Checkbox --> */}
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="form2Example34"
-                    checked
-                  />
-                  <label class="form-check-label" for="form2Example34">
-                    {" "}
-                    Remember me{" "}
-                  </label>
-                </div>
-              </div>
-
-              <div class="col">
-                {/* <!-- Simple link --> */}
-                <a href="#!">Forgot password?</a>
-              </div>
-            </div>
-
             {/* <!-- Submit button --> */}
             <button
               type="submit"
-              class="btn btn-primary btn-block mb-4"
+              className="btn btn-primary btn-block mb-4"
               id="sign"
             >
-              Sign in
+              Log In
             </button>
 
             {/* <!-- Register buttons --> */}
-            <div class="text-center">
+            <div className="text-center">
               <p>
-                Not a member? <a href="#!">Register</a>
+                Not a member? <a href="/signup">Register</a>
               </p>
               <p>or sign up with:</p>
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
+              <button type="button" className="btn btn-dark btn-floating mx-1">
+                <i className="fab fa-facebook-f"></i>
               </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-google"></i>
+              <button type="button" className="btn btn-dark btn-floating mx-1">
+                <i className="fab fa-google"></i>
               </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
+              <button type="button" className="btn btn-dark btn-floating mx-1">
+                <i className="fab fa-twitter"></i>
               </button>
 
-              <button type="button" class="btn btn-dark btn-floating mx-1">
-                <i class="fab fa-github"></i>
+              <button type="button" className="btn btn-dark btn-floating mx-1">
+                <i className="fab fa-github"></i>
               </button>
             </div>
           </form>
