@@ -27,6 +27,11 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
+    @classmethod
+    def lookup(cls, email):
+        user = cls.query.filter_by(email=email).one_or_none()
+        return user
+
 # class Parents(db.Model):
 #     id = Column(Integer, unique=True, primary_key=True)
 #     first_name = Column(String(200), nullable=False)

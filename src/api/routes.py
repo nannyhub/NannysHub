@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, Nanny
+from api.models import db, Nanny, User
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -11,6 +11,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 
 api = Blueprint('api', __name__)
+
 
 
 
@@ -38,33 +39,36 @@ def create_user():
     
 
     if not email or not password:
-        return "you must fill both your email or password.", 400
+        return {"error":"you must fill both your email or password."}, 400
 
     print(User.query.filter_by(email=email).first())
 
     if User.query.filter_by(email=email).first() != None:
-        return "this user already exists.", 409
+        return {"error":"this user already exists."}, 409
 
-    new_user = User(email=email, password=generate_password_hash(password))
+    new_user = User(first_name=first_name, last_name=last_name, email=email, password=generate_password_hash(password))
     db.session.add(new_user)
     db.session.commit()
-    return "User has been created", 200
+    return {"message":"User has been created"}, 200
 
     # Create a route to authenticate your users and return JWTs. The
     # create_access_token() function is used to actually generate the JWT.
 @api.route("/login", methods=["POST", "GET"])
 def login():
-    body = request.get_json()
-    if body is None:
-        return jsonify({"error": "Body is empty or null"}), 400
-    email = body['email']
-    password = body['password']
+    email = request.json.get("email")
+    password = request.json.get("password")
+
+    if not (email and password):
+        return jsonify({"error": "Email or password missing"}), 401
+
     user = User.lookup(email)
+
     if user and check_password_hash(user.password, password):
-        access_token = create_access_token(identity=email)
+        access_token = create_access_token(identity=user.serialize())
         return jsonify({'token' : access_token}), 200
-    else:
-        return {'error': 'user and pass not valid'}, 400
+   
+    return {'error': 'user not found'}, 404
+
 
 # Protect a route with jwt_required, which will kick out requests
 # without a valid JWT present.
