@@ -1,6 +1,6 @@
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float, DateTime, Numeric
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -10,8 +10,6 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = Column(Integer, primary_key=True)
-    first_name = Column(String(100), unique=False)
-    last_name = Column(String(100), unique=False)
     email = Column(String(120), unique=True, nullable=False)
     password = Column(String(500), unique=False, nullable=False)
 
@@ -22,15 +20,34 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            "firstname": self.first_name,
-            "last name": self.last_name
+            "first_name": self.first_name,
+            "last_name": self.last_name
             # do not serialize the password, its a security breach
         }
+
+    def set_token(self, token):
+        self.token = token
+        db.session.add(self)
+        db.session.commit()
+
 
     @classmethod
     def lookup(cls, email):
         user = cls.query.filter_by(email=email).one_or_none()
         return user
+
+
+    @classmethod
+    def identify(cls, id):
+        return cls.query.get(id)
+
+    @property
+    def identity(self):
+        return self.id
+
+    def __repr__(self):
+        return '<User %r>' % self.email
+    
 
 # class Parents(db.Model):
 #     id = Column(Integer, unique=True, primary_key=True)
@@ -39,7 +56,7 @@ class User(db.Model):
 #     description= Column(String(180), nullable=False)
 #     number_of_children = Column(Integer, nullable=True)
 #     # parents = relationship('User', backref='User', lazy=True)
-#     # nannys = relationship('Nannys', backref='Nanny', lazy=True)
+#     # nannys = relationship('Nanny', backref='Nanny', lazy=True)
 
 #     def __repr__(self):
 #         return '<Parents %r>' % self.first_name
@@ -58,35 +75,36 @@ class Nanny(db.Model):
     last_name = Column(String(200), nullable=False)
     age = Column(Integer,nullable=False)
     skills = Column(String(200), nullable=True)
-    experience = Column(String(200), nullable=False)
+    experience = Column(Integer, nullable=False)
     location = Column(String(200), nullable=False)
     price = Column(Integer)
+    longitude = Column(Numeric(20,10), nullable=True)
+    latitude = Column(Numeric(20,10), nullable=True)
 
     def __repr__(self):
-        return '<Nannys %r>' % self.nanny_id
+        return '<Nanny %r>' % self.id
 
     def serialize(self):
         return {
+            "id": self.id,
             "first_name": self.first_name,
             "last_name": self.last_name,
+            "age": self.age,
             "skils": self.skills,
             "experience": self.experience,
             "location": self.location,
-            "price": self.price
+            "price": self.price,
+            "longitude": self.longitude,
+            "latitude": self.latitude,
         }
-
-    @classmethod
-    def get_all(cls):
-        nannys = cls.query.all()
-        return nannys
 
 
 # class Favorites(db.Model):
 #     id = Column(Integer, primary_key=True)
     # parents_id = Column(Integer, ForeignKey('Parents.id')) 
     # parents= relationship(Parents)
-    # nannys_id = Column(Integer, ForeignKey('Nannys.id'))
-    # nannys= relationship("Nannys")
+    # nannys_id = Column(Integer, ForeignKey('Nanny.id'))
+    # nannys= relationship("Nanny")
 
 
     # def __repr__(self):
@@ -105,7 +123,7 @@ class Nanny(db.Model):
 #     id = Column(Integer, primary_key=True)
 #     date= Column(String, nullable=False)
 #     nannys_id= Column(Integer, ForeignKey("nannys.id"))
-#     nannys= relationship(Nannys)
+#     nannys= relationship(Nanny)
 #     parents_id= Column(Integer, ForeignKey("parents.id"))
 #     parents= relationship(Parents)
 
@@ -125,7 +143,7 @@ class Nanny(db.Model):
 #     id = Column(Integer, primary_key=True)
 #     score= Column(Integer, nullable=False)
 #     nanny_id= Column(Integer, ForeignKey("nannys.id"))
-#     nanny= relationship(Nannys)
+#     nanny= relationship(Nanny)
 #     parents_id= Column(Integer, ForeignKey("parents.id"))
 #     parents= relationship(Parents)
 

@@ -10,10 +10,7 @@ export const Nannyprofile = () => {
     "https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
   useEffect(() => {
-    console.log(!store.nanny.length);
-    if (!store.nanny.length) {
-      actions.getNanny(params.theid);
-    }
+    actions.getsingleNanny(params.id);
   }, []);
   return (
     <>
@@ -28,15 +25,15 @@ export const Nannyprofile = () => {
               id="fakeText"
             >
               {" "}
-              Lucas ipsum dolor sit amet maul grievous mustafar wampa organa
-              yavin organa fett antilles tatooine. Biggs amidala kenobi antilles
-              moff yavin solo darth greedo. Wookiee wicket darth jinn c-3p0.
-              Bespin jinn k-3po coruscant darth baba calamari ahsoka. Vader yoda
-              kamino moff lobot r2-d2 organa skywalker baba. Gonk c-3po yavin
-              moff moff skywalker. Jinn darth binks hutt coruscant dantooine
-              moff binks. Moff darth darth dantooine tatooine moff skywalker.
-              Skywalker calrissian organa moff. Mothma mace chewbacca maul
-              skywalker anakin thrawn ahsoka antilles.
+              Lucas origin ipsum dolor sit amet maul grievous mustafar wampa
+              organa yavin organa fett antilles tatooine. Biggs amidala kenobi
+              antilles moff yavin solo darth greedo. Wookiee wicket darth jinn
+              c-3p0. Bespin jinn k-3po coruscant darth baba calamari ahsoka.
+              Vader yoda kamino moff lobot r2-d2 organa skywalker baba. Gonk
+              c-3po yavin moff moff skywalker. Jinn darth binks hutt coruscant
+              dantooine moff binks. Moff darth darth dantooine tatooine moff
+              skywalker. Skywalker calrissian organa moff. Mothma mace chewbacca
+              maul skywalker anakin thrawn ahsoka antilles.
             </h6>
           </div>
         </div>
