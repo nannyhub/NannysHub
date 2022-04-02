@@ -51,6 +51,9 @@ const Layout = () => {
             <Route exact path="/search">
               <SearchPage />
             </Route>
+            <Route exact path="/parents">
+              <Parents />
+            </Route>
             <Route exact path="/nannyprofile/:id">
               <Nannyprofile />
             </Route>

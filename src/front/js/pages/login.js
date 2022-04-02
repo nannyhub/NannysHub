@@ -35,7 +35,7 @@ const Login = () => {
           </form>
         </Col>
         <Col className="col-4">
-          <img src="https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+          <img src="https://images.pexels.com/photos/3662841/pexels-photo-3662841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
         </Col>
       </Row>
       <br></br>

@@ -21,17 +21,20 @@
   background-color: #b3541e;
   color: white;
   font-size: 25px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .price li {
   border-bottom: 1px solid #eee;
   padding: 20px;
   text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .price .grey {
   background-color: #eee;
   font-size: 20px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .button {
@@ -45,6 +48,7 @@
   border-radius: 5px;
   -webkit-transition: 1s;
   transition: 1s;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .button:hover {
