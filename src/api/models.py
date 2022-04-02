@@ -90,7 +90,7 @@ class Nanny(db.Model):
             "first_name": self.first_name,
             "last_name": self.last_name,
             "age": self.age,
-            "skils": self.skills,
+            "skills": self.skills,
             "experience": self.experience,
             "location": self.location,
             "price": self.price,
