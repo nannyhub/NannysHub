@@ -85,14 +85,6 @@ const Login = () => {
                 <button type="button" class="btn btn-floating mx-1" id="google">
                   <i class="fab fa-google"></i>
                 </button>
-
-                <button type="button" class="btn btn-floating mx-1" id="twitt">
-                  <i class="fab fa-twitter"></i>
-                </button>
-
-                <button type="button" class="btn  btn-floating mx-1" id="git">
-                  <i class="fab fa-github"></i>
-                </button>
               </div>
             </div>
           </form>

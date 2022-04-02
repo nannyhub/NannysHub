@@ -24,7 +24,7 @@ export const Footer = () => {
             </div>
             <div>
               <Link to="/">
-                <h6>Search Nannies</h6>
+                <h6>Private</h6>
               </Link>
             </div>
           </div>
