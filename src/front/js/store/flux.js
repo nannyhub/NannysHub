@@ -1,13 +1,36 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-6ntl7vyx412.ws-us38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-7cvcpg5ab0a.ws-eu38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       nannies: [],
       nannyList: [],
-      nanny: [],
+      nanny: {},
     },
     actions: {
+      login: (email, password) => {
+        console.log("Log In");
+        console.log("email", email);
+        console.log("password", password);
+        let loginData = { email, password };
+
+        fetch(
+          "https://3001-nannyhub-nannyshub-dpzmqeo0q2j.ws-eu38.gitpod.io/api/login",
+          {
+            method: "POST",
+            body: JSON.stringify(loginData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ token: result.token });
+            console.log("aqui", getStore().token);
+          })
+          .catch((error) => console.log("error", error));
+      },
       getNannyApplyFilter: async (searchByInfo) => {
         const response = await fetch(
           "https://3001-nannyhub-nannyshub-vsm3fp1e71f.ws-eu38.gitpod.io/api/search-nannies",
@@ -30,8 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
       getsingleNanny: (nannyId) => {
-        let localNannies = getActions().getLocalNannies();
-
+        // let localNannies = getActions().getLocalNannies();
         fetch(`${BASE_URL}/nannies/${nannyId}`)
           .then((resp) => resp.json())
           .then((data) => getActions().setNannies([...localNannies, data]))
@@ -51,9 +73,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getLocalNannies: () => {
         return getStore().nannies;
+      },
       signUp: (data) => {
         fetch(
-          "https://3001-nannyhub-nannyshub-e9zfwobe8zj.ws-eu38.gitpod.io/api/signup",
+          "https://3001-nannyhub-nannyshub-7cvcpg5ab0a.ws-eu38.gitpod.io/api/signup",
           {
             method: "POST",
             body: JSON.stringify(data),
