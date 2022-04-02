@@ -18,10 +18,14 @@ export const Navbar = () => {
         <div className="ml-auto"></div>
         <div className="justify-content-end">
           <button type="button" className="btn" id="button1">
-            <Link to="/login">Login</Link>
+            <Link to="/login" id="ss">
+              Login
+            </Link>
           </button>
           <button type="button" className="btn" id="button2">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" id="ss">
+              Sign Up
+            </Link>
           </button>
         </div>
       </div>
