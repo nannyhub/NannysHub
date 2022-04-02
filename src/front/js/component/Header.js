@@ -13,9 +13,8 @@ const Header = () => {
     <>
       <header className="bg-image">
         <div className="bg-container">
-          <h1>NannyS Hub</h1>
-          <h2>Things better with Mary</h2>
-          <Button variant="primary" onClick={handleShow}>
+          <h1>Nanny Hub</h1>
+          <Button variant="light" onClick={handleShow}>
             Book Now!
           </Button>
           <Modal show={show} onHide={handleClose}>
