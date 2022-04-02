@@ -1,35 +1,31 @@
-#avatar {
-  height: 240px;
-  width: 240px;
+#av {
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
-  margin: auto;
+  margin-left: 35%;
   padding: 15px;
 }
 
 #sign {
-  align-self: center;
-  margin-left: 43%;
-  background-color: #b3541e;
-  border: 1px;
-  border-color: #b3541e;
-}
-#socials {
-  margin-left: 10%;
+  width: 500px;
+  background-color: #f7f5f2;
+  margin-left: 15px;
+  height: 750px;
+  font-family: "Libre Baskerville", serif;
 }
 
-#formulario {
+#ff {
+  margin: 20px;
   margin-left: 20%;
-}
-#facebook {
-  background-color: #b3541e;
+  font-family: "Libre Baskerville", serif;
 }
 
-#google {
+#ll {
+  margin: 20px;
   background-color: #b3541e;
-}
-#twitt {
-  background-color: #b3541e;
-}
-#git {
-  background-color: #b3541e;
+  color: white;
+  margin-left: 35%;
+  font-family: "Libre Baskerville", serif;
+  border-radius: 5px;
+  border-color: white;
 }

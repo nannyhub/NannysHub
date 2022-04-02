@@ -56,26 +56,27 @@ p {
 #register {
   width: 500px;
   background-color: #f7f5f2;
-  margin-left: 15px;
+  margin-left: 20px;
   height: 750px;
 }
 
 #pg {
   text-align: center;
   font-family: "Libre Baskerville", serif;
+  letter-spacing: normal;
   font-size: medium;
   align-self: center;
-  margin-left: 25%;
+  margin-left: 30%;
   margin-bottom: 20px;
   width: 200px;
 }
 
 #bb {
   background-color: #b3541e;
-  outline-color: #361500;
+  border-color: white;
   color: white;
   border-radius: 5px;
-  margin-left: 60%;
+  margin-left: 65%;
   margin-top: 15px;
   font-family: "IBM Plex Sans", sans-serif;
 }
@@ -85,7 +86,7 @@ form {
 }
 
 #input1 {
-  margin-left: 40%;
+  margin-left: 45%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -93,7 +94,7 @@ form {
 }
 
 #input2 {
-  margin-left: 40%;
+  margin-left: 45%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -101,7 +102,7 @@ form {
 }
 
 #input3 {
-  margin-left: 40%;
+  margin-left: 45%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -109,7 +110,7 @@ form {
 }
 
 #input4 {
-  margin-left: 40%;
+  margin-left: 45%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
