@@ -23,8 +23,8 @@ export const Footer = () => {
               </Link>
             </div>
             <div>
-              <Link to="/" id="sm">
-                <h6>Private</h6>
+              <Link to="/parents" id="sm">
+                <h6>Parent's Area</h6>
               </Link>
             </div>
           </div>
