@@ -3,7 +3,6 @@ import "../../styles/parents.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { useForm } from "react-hook-form";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Parents = () => {
@@ -15,17 +14,13 @@ const Parents = () => {
   const onSubmit = (data) => console.log(data);
   return (
     <>
-      <div className="header" id="header">
-        <h1>Welcome Back</h1>
-      </div>
+      <br></br>
       <Row>
-        <Col className="col-2" id="pt">
-          <img
-            src="https://images.pexels.com/photos/7678123/pexels-photo-7678123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            id="lego"
-          ></img>
+        <Col id="pt">
+          <i class="fas fa-baby" id="ic"></i>
+          mnbvcsawqaserfghhvbhjbjjkbjknlkkkkknjnljbbbbbbbbbbbbbbbbbbbblllllllllllllllllllllllllllllllllllllllll
         </Col>
-        <Col className="col-6" id="bio">
+        <Col id="bio">
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -74,6 +69,15 @@ const Parents = () => {
 
             <input type="submit" id="ww" />
           </form>
+        </Col>
+      </Row>
+      <Row>
+        <Col id="c1">
+          <i class="fas fa-baby-carriage" id="ic"></i>
+          szxdfghjklpiukhyjgfhjjokasjdhfkkjdsokdfjghjkojerdfhoqwpeirouihybg
+        </Col>
+        <Col id="c2">
+          qpweoirjuthgnfmdlokfrjgihtnjkowehtoweirthguifbalonigab
         </Col>
       </Row>
       <br></br>

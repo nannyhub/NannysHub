@@ -26,19 +26,33 @@
 }
 
 #pt {
-  margin-left: 20px;
+  background-color: #f7f5f2;
+  margin: 5px;
+  height: 400px;
 }
 #bio {
-  margin-top: 20px;
-  margin-left: 50%;
-  width: 480px;
-  height: 400px;
-  padding: 20px;
-  margin-left: 90px;
   font-family: "Libre Baskerville", serif;
   font-size: large;
+  background-color: #733c3c;
+  margin: 5px;
+  height: 400px;
 }
 
+#c1 {
+  background-color: #b3541e;
+  height: 400px;
+  margin: 5px;
+}
+
+#c2 {
+  background-color: #ceab93;
+  height: 400px;
+  margin: 5px;
+}
+
+#ic {
+  height: 400px;
+}
 #ww {
   background-color: white;
   color: black;
