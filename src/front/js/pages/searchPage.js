@@ -33,6 +33,7 @@ export const SearchPage = () => {
   };
 
   useEffect(() => {
+    actions.getNannies();
     navigator.geolocation.getCurrentPosition((position) => {
       setLocation({
         lat: position.coords.latitude,
@@ -121,33 +122,28 @@ export const SearchPage = () => {
             valueLabelDisplay="auto"
           />
         </div>
-        {store.nannyList.map((item) => {
+        {store.nannies.map((item) => {
           return (
-            //add cards for the items. item = Nannys.serialize
-            <div>
-              <h1>First Name: {item.first_name}</h1>
-              <p>Last Name: {item.last_name}</p>
+            <div className="d-flex flex-wrap w-50">
+              <Paper
+                className="d-flex align-items-center p-3 w-50"
+                elevation={0}
+                variant="outlined"
+              >
+                <Avatar sx={{ width: 56, height: 56 }}>N</Avatar>
+                <div className="ms-4 d-flex flex-column">
+                  <h3>
+                    {item?.first_name} {item?.last_name}
+                  </h3>
+                  <h4>Age: {item?.age}</h4>
+                  <h5>City: {item?.location}</h5>
+                  <p>Skills and education {item?.skils}</p>
+                  <p>Years of experience: {item?.experience}</p>
+                </div>
+              </Paper>
             </div>
           );
         })}
-        <div className="d-flex flex-wrap w-50">
-          <Paper
-            className="d-flex align-items-center p-3 w-50"
-            elevation={0}
-            variant="outlined"
-          >
-            <Avatar sx={{ width: 56, height: 56 }}>N</Avatar>
-            <div className="ms-4 d-flex flex-column">
-              <h5>lorem ipsum</h5>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a
-                galley...
-              </p>
-            </div>
-          </Paper>
-        </div>
       </div>
     </Container>
   );

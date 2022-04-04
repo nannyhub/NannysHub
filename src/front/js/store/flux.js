@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-6zust9n0qzp.ws-us38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-naoso6zfl95.ws-eu38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -32,7 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getNannyApplyFilter: async (searchByInfo) => {
         const response = await fetch(
-          "https://3001-nannyhub-nannyshub-vsm3fp1e71f.ws-eu38.gitpod.io/api/search-nannies",
+          "https://3001-nannyhub-nannyshub-naoso6zfl95.ws-eu38.gitpod.io/api/search-nannies",
           {
             method: "POST",
             headers: {
@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         );
         const data = await response.json();
-        setStore({ nannyList: data.response });
+        setStore({ nannies: data.response });
       },
       getNannies: () => {
         fetch(`${BASE_URL}/nannies/`)
