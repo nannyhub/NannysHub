@@ -6,6 +6,11 @@ import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Contacts = () => {
+  const handleClick = () => {
+    return alert(
+      "Your form has been submitted. We'll get back to you as soon as possible"
+    );
+  };
   return (
     <>
       <div className="header" id="header">
@@ -26,7 +31,7 @@ const Contacts = () => {
           <Col>
             <p className="row-md col-6" id="mission">
               NannyHub was born from the vision of one of our members, as a
-              parent. At the begging, as a group, we decided to follow this
+              parent. At the beginning, as a group, we decided to follow this
               vision, considering 2 out of 3 members are parents and feel very
               strongly motivated to improve the nanny and childcare industry.
               Later on, we were joined by another member who, despite not having
@@ -62,10 +67,14 @@ const Contacts = () => {
                 <Form.Control type="subject" placeholder="Subject" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formMessage" id="message">
-                <Form.Control type="message" placeholder=" Add your message" />
+              <Form.Group className="mb-3" controlId="formMessage">
+                <Form.Control
+                  type="message"
+                  placeholder=" Add your message"
+                  id="message"
+                />
               </Form.Group>
-              <Button type="submit" id="button">
+              <Button type="submit" id="button" onClick={handleClick}>
                 Submit
               </Button>
             </Form>
