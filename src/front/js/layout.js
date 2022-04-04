@@ -14,6 +14,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Nannyprofile } from "./pages/nannyprofile";
+import Parents from "./pages/parents";
 
 //create your first component
 const Layout = () => {
@@ -49,6 +50,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/search">
               <SearchPage />
+            </Route>
+            <Route exact path="/parents">
+              <Parents />
             </Route>
             <Route exact path="/nannyprofile/:id">
               <Nannyprofile />

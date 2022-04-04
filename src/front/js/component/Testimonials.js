@@ -9,7 +9,7 @@ const Testimonials = () => {
       <section className="content-container">
         <div className="textArea">
           <h2>Testimonials</h2>
-          <p>What others parents says about our babbysitters</p>
+          <p>What others parents say about our babbysitters</p>
         </div>
         <div className="cust-container">
           <img src={user1} alt="Avatar" style={{ width: "90px" }} />
