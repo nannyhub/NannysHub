@@ -1,8 +1,36 @@
-import React, { Component, useContext } from "react";
+
+import React, { Component, useState, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 import "../../styles/login.css";
 
 const Login = () => {
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
+  const changeHandler = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const changeHandlerPassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  console.log("This is your token", store.token);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    actions.login(email, password);
+    console.log("test Click");
+  };
+
+  if (store.token && store.token != "" && store.token != undefined)
+    history.push("/search");
+
   return (
     <>
       <div className="header" id="header">

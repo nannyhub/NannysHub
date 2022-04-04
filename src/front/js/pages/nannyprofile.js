@@ -9,12 +9,8 @@ export const Nannyprofile = () => {
   let pathImg =
     "https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
-  const [nanny, setNanny] = useState({ first_name: "Vitu" });
-
   useEffect(() => {
     actions.getsingleNanny(params.id);
-    // TODO - Line above is broken for some reason
-    setNanny(actions.getLocalNanny(params.id));
   }, []);
   return (
     <>
@@ -22,7 +18,7 @@ export const Nannyprofile = () => {
         <div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
           <div className="right-side d-inline-block">
             <h1 className="text-center warning" id="name">
-              {nanny.first_name}
+              {store.nanny.first_name}
             </h1>
             <h6
               className="description mx-5 text-center text-monospace"
@@ -42,7 +38,7 @@ export const Nannyprofile = () => {
           </div>
         </div>
         <div className="divider bg-red" />
-        {nanny ? (
+        {store.nanny ? (
           <div className="row d-flex m-3">
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -50,7 +46,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.first_name}
+              {store.nanny.first_name}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -58,7 +54,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.last_name}{" "}
+              {store.nanny.last_name}{" "}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -66,7 +62,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.age}{" "}
+              {store.nanny.age}{" "}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -74,7 +70,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.skills}{" "}
+              {store.nanny.skills}{" "}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -82,7 +78,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.experience}{" "}
+              {store.nanny.experience}{" "}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -90,7 +86,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.location}{" "}
+              {store.nanny.location}{" "}
             </div>
             <div className="col-2 text-warning" id="nannys">
               <strong>
@@ -98,7 +94,7 @@ export const Nannyprofile = () => {
               </strong>
               <br />
               <br />
-              {nanny.price}{" "}
+              {store.nanny.price}{" "}
             </div>
           </div>
         ) : (
