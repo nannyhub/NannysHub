@@ -17,7 +17,9 @@ export const Signup = () => {
     actions.signUp(data);
   };
   console.log(errors);
-
+  const newSign = () => {
+    return alert("Thank your signing up to NannyHub");
+  };
   return (
     <div>
       <div className="header" id="header">
@@ -65,7 +67,12 @@ export const Signup = () => {
               id="input4"
             />
 
-            <input type="submit" placeholder="Submit" id="bb" />
+            <input
+              type="submit"
+              placeholder="Submit"
+              id="bb"
+              onClick={newSign}
+            />
           </form>
         </Col>
       </Row>
