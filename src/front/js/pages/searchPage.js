@@ -92,7 +92,7 @@ export const SearchPage = () => {
               />
             </Col>
             <Col>
-              <i class="fa-solid fa-badge-check"></i>
+              <i className="fa-solid fa-badge-check"></i>
             </Col>
             <Col className="search">
               <input
@@ -109,11 +109,13 @@ export const SearchPage = () => {
             </Col>
             <Col>
               <Button
+                variant="light"
+                id="ba"
                 onClick={() => {
                   actions.getNannyApplyFilter(searchByInfo);
                 }}
               >
-                Test
+                Search
               </Button>
             </Col>
           </Row>
@@ -128,7 +130,7 @@ export const SearchPage = () => {
           </div>
         </div>
       </Container>
-      <div className="d-flex">
+      <div className="d-flex .col-md-10">
         {store.nannies.map((item) => {
           return (
             <div className="d-flex flex-wrap w-100">
@@ -136,16 +138,17 @@ export const SearchPage = () => {
                 className="d-flex align-items-center p-3 w-80"
                 elevation={0}
                 variant="outlined"
+                id="cart"
               >
                 <Avatar sx={{ width: 56, height: 56 }}>N</Avatar>
                 <div className="ms-4 d-flex flex-column">
-                  <h3>
+                  <h3 id="nome">
                     {item?.first_name} {item?.last_name}
                   </h3>
-                  <h4>Age: {item?.age}</h4>
-                  <h5>City: {item?.location}</h5>
-                  <p>Skills and education {item?.skils}</p>
-                  <p>Years of experience: {item?.experience}</p>
+                  <h4 id="deet">Age: {item?.age}</h4>
+                  <h5 id="deet">City: {item?.location}</h5>
+                  <p id="dets">Skills and education: {item?.skils}</p>
+                  <p id="dets">Years of experience: {item?.experience}</p>
                 </div>
               </Paper>
             </div>

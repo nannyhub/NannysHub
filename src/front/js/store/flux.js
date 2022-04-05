@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-naoso6zfl95.ws-eu38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-51koad367e3.ws-eu38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -44,11 +44,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         setStore({ nannies: data.response });
       },
-      getNannies: () => {
-        fetch(`${BASE_URL}/nannies/`)
-          .then((resp) => resp.json())
-          .then((data) => setStore({ nannies: data }))
-          .catch((error) => console.log("Error retrieving Nanny", error));
+      getNannies: async () => {
+        try {
+          const response = await fetch(`${BASE_URL}/nannies/`);
+          const data = await response.json();
+          setStore({ nannies: data });
+        } catch (error) {
+          console.log("Error retrieving Nanny", error);
+        }
       },
       getsingleNanny: (nannyId) => {
         fetch(`${BASE_URL}/nannies/${nannyId}`)
