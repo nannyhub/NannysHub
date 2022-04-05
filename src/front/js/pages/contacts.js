@@ -65,7 +65,7 @@ const Contacts = () => {
               <Form.Group className="mb-3" controlId="formMessage" id="message">
                 <Form.Control type="message" placeholder=" Add your message" />
               </Form.Group>
-              <Button type="submit" id="button">
+              <Button type="submit"  variant="light" id="butto">
                 Submit
               </Button>
             </Form>
