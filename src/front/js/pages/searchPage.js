@@ -130,10 +130,10 @@ export const SearchPage = () => {
           </div>
         </div>
       </Container>
-      <div className="d-flex .col-md-10">
+      <div className="d-flex flex-wrap">
         {store.nannies.map((item) => {
           return (
-            <div className="d-flex flex-wrap w-100">
+            <div className="d-flex flex-wrap w-90">
               <Paper
                 className="d-flex align-items-center p-3 w-80"
                 elevation={0}
