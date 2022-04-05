@@ -3,11 +3,27 @@
 }
 
 .cust-container {
-  border: 2px solid rgb(102, 102, 102);
+  border: 1px solid rgb(102, 102, 102);
   background-color: #fff;
   border-radius: 5px;
   padding: 16px;
   margin: 16px 0;
+}
+
+#tes {
+  color: #b3541e;
+}
+#ds {
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: 2px;
+}
+#par {
+  letter-spacing: 2px;
+  font-family: "Lato";
+}
+
+#avi {
+  height: 80px;
 }
 
 .cust-container::after {
