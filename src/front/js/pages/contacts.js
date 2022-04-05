@@ -74,7 +74,7 @@ const Contacts = () => {
                   id="message"
                 />
               </Form.Group>
-              <Button type="submit" id="button" onClick={handleClick}>
+              <Button type="submit" variant="light" id="butto" onClick={handleClick}>
                 Submit
               </Button>
             </Form>
