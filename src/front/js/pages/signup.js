@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../styles/signup.css";
 import { useForm } from "react-hook-form";
+import Button from "react-bootstrap/Button";
 
 export const Signup = () => {
   const { store, actions } = useContext(Context);
@@ -18,7 +19,7 @@ export const Signup = () => {
   };
   console.log(errors);
   const newSign = () => {
-    return alert("Thank your signing up to NannyHub");
+    return alert("Thank your for signing up to NannyHub");
   };
   return (
     <div>
@@ -66,13 +67,15 @@ export const Signup = () => {
               {...register("Password", { required: true, maxLength: 12 })}
               id="input4"
             />
-
-            <input
+            <Button
               type="submit"
+              variant="light"
               placeholder="Submit"
               id="bb"
               onClick={newSign}
-            />
+            >
+              Sign Up
+            </Button>
           </form>
         </Col>
       </Row>
