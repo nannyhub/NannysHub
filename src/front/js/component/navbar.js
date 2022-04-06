@@ -19,11 +19,11 @@ export const Navbar = () => {
         <div className="justify-content-end">
           {store.token == null || store.token == undefined ? (
             <div className="d-flex">
-              <Link to="/login">
-                <button type="button" className="btn" id="button1">
+              <button type="button" className="btn" id="button1">
+                <Link to="/login" id="ss">
                   Login
-                </button>
-              </Link>
+                </Link>
+              </button>
               <button type="button" className="btn" id="button2">
                 <Link to="/signup" id="ss">
                   Sign Up
