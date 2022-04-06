@@ -80,7 +80,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       login: (email, password) => {
         let loginData = { email, password };
 
-        fetch(`${BASE_URL}/login`, {
+        fetch(`${process.env.BACKEND_URL}/login`, {
           method: "POST",
           body: JSON.stringify(loginData),
           headers: {
