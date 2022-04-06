@@ -67,12 +67,7 @@ export const Signup = () => {
               id="input4"
             />
 
-            <input
-              type="submit"
-              placeholder="Submit"
-              id="bb"
-              onClick={newSign}
-            />
+            <input type="submit" placeholder="Submit" id="bb" />
           </form>
         </Col>
       </Row>
