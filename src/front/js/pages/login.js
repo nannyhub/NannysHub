@@ -17,12 +17,9 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  console.log("This is your token", store.token);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     actions.login(email, password);
-    console.log("test Click");
   };
 
   if (store.token && store.token != "" && store.token != undefined)
