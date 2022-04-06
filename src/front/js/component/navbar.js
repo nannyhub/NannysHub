@@ -7,24 +7,25 @@ export const Navbar = () => {
     <nav className="navbar navbar-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img
-            id="mary"
-            src="https://behindthecurtaincincy.files.wordpress.com/2015/07/voi_mary-poppins-logo.jpg"
-            alt=""
-          ></img>
+          <Link to="/">
+            <img
+              id="mary"
+              src="https://cdn.dribbble.com/users/2068059/screenshots/5856152/attachments/1261679/child_care_logo_by_visual_curve_02.png?compress=1&resize=800x600&vertical=top"
+              alt=""
+            ></img>
+          </Link>
         </a>
-        <Link to="/">
-          <span className="navbar-brand mb-0 h1" id="title">
-            NannyHub
-          </span>
-        </Link>
         <div className="ml-auto"></div>
         <div className="justify-content-end">
           <button type="button" className="btn" id="button1">
-            <Link to="/login">Login</Link>
+            <Link to="/login" id="ss">
+              Login
+            </Link>
           </button>
           <button type="button" className="btn" id="button2">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" id="ss">
+              Sign Up
+            </Link>
           </button>
         </div>
       </div>

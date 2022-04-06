@@ -12,10 +12,12 @@ const Pricing = () => {
             <li className="grey">9.99 €/ year</li>
             <li>10 message to babbysitters</li>
             <li>1 child</li>
-            <li>Full babysitter´s details </li>
+            <li>Full babysitter's details </li>
             <li className="grey">
               <button className="button">
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup" id="sm">
+                  Sign Up
+                </Link>
               </button>
             </li>
           </ul>
@@ -29,10 +31,12 @@ const Pricing = () => {
             <li className="grey">24.99 € / year</li>
             <li>20 messages to babbysitters</li>
             <li>2 Children</li>
-            <li>-10% over babysitter's price per h. </li>
+            <li>-10% over babysitter's price per hour. </li>
             <li className="grey">
               <button className="button">
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup" id="sm">
+                  Sign Up
+                </Link>
               </button>
             </li>
           </ul>
@@ -44,10 +48,12 @@ const Pricing = () => {
             <li className="grey">49.99 € / year</li>
             <li>Unlimited messages to babbysitters</li>
             <li>+3 Children</li>
-            <li>-20% over babysitter's price per h.</li>
+            <li>-20% over babysitter's price per hour.</li>
             <li className="grey">
               <button className="button">
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup" id="sm">
+                  Sign Up
+                </Link>
               </button>
             </li>
           </ul>
