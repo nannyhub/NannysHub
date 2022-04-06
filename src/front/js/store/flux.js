@@ -11,9 +11,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ token: localStorage.getItem("token") });
       },
       login: (email, password) => {
-        console.log("Log In");
-        console.log("email", email);
-        console.log("password", password);
         let loginData = { email, password };
 
         fetch(`${process.env.BACKEND_URL}/login/`, {
@@ -26,7 +23,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
-            console.log("aqui", getStore().token);
           })
           .catch((error) => console.log("error", error));
       },
