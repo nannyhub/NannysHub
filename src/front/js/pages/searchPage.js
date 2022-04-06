@@ -22,7 +22,7 @@ export const SearchPage = () => {
   const apiKey = "AIzaSyCyVmgXIL08YhSyk-HvPdo2IFUzzuyQIXg";
   const [location, setLocation] = useState({ lat: -34.397, lng: 150.644 });
 
-  const render = (status) => {
+  const renderLocation = (status) => {
     switch (status) {
       case Status.LOADING:
         return <Spinner animation="border" />;
@@ -121,7 +121,7 @@ export const SearchPage = () => {
             </Col>
           </Row>
           <div className="d-flex flex-column w-50 align-items-center">
-            <Wrapper apiKey={apiKey} render={render} />
+            <Wrapper apiKey={apiKey} render={renderLocation} />
             <Slider
               className="w-75"
               defaultValue={50}
@@ -134,7 +134,7 @@ export const SearchPage = () => {
       <div className="d-flex flex-wrap">
         {store.nannies.map((item) => {
           return (
-            <div className="d-flex flex-wrap w-90">
+            <div key={item.id} className="d-flex flex-wrap w-90">
               <Paper
                 className="d-flex align-items-center p-3 w-80"
                 elevation={0}
