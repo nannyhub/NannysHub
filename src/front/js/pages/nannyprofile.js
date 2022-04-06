@@ -10,10 +10,7 @@ export const Nannyprofile = () => {
     "https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
 
   useEffect(() => {
-    console.log(!store.nanny.length);
-    if (!store.nanny.length) {
-      actions.getsingleNanny(params.theid);
-    }
+    actions.getsingleNanny(params.id);
   }, []);
   return (
     <>

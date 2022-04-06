@@ -1,12 +1,22 @@
-.contact-button-card {
-  width: 300px;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 50px;
-  padding-bottom: 450px;
+h1 {
+  font-family: "Lato";
+  font-size: large;
+}
+#tt {
+  background-color: #f7f5f2;
+
+  font-family: "Lato";
+}
+#hh {
+  font-weight: 200;
+  font-size: x-large;
+  align-self: center;
+  color: #b3541e;
 }
 
-#button-contact-faq {
-  color: white;
+#cc {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 100;
+  font-size: large;
+  letter-spacing: 1px;
 }

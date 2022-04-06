@@ -14,12 +14,13 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Nannyprofile } from "./pages/nannyprofile";
+import Parents from "./pages/parents";
 
 //create your first component
 const Layout = () => {
-    //the basename is used when your project is published in a subdirectory and not in the root of the domain
-    // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-    const basename = process.env.BASENAME || "";
+  //the basename is used when your project is published in a subdirectory and not in the root of the domain
+  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+  const basename = process.env.BASENAME || "";
   return (
     <div id="base-container">
       <BrowserRouter basename={basename}>
@@ -50,7 +51,10 @@ const Layout = () => {
             <Route exact path="/search">
               <SearchPage />
             </Route>
-            <Route exact path="/nannyprofile">
+            <Route exact path="/parents">
+              <Parents />
+            </Route>
+            <Route exact path="/nannyprofile/:id">
               <Nannyprofile />
             </Route>
             <Route>

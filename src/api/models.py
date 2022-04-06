@@ -30,10 +30,12 @@ class User(db.Model):
         db.session.add(self)
         db.session.commit()
 
+
     @classmethod
     def lookup(cls, email):
         user = cls.query.filter_by(email=email).one_or_none()
         return user
+
 
     @classmethod
     def identify(cls, id):
@@ -84,6 +86,7 @@ class Nanny(db.Model):
 
     def serialize(self):
         return {
+            "id": self.id,
             "first_name": self.first_name,
             "last_name": self.last_name,
             "age": self.age,
