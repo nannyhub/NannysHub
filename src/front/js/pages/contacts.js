@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const Contacts = () => {
   const handleClick = () => {
     return alert(
-      "Your form has been submitted. We'll get back to you as soon as possible"
+      "Thank you for reaching out. We'll get back to you as soon as possible"
     );
   };
   return (
@@ -74,7 +74,12 @@ const Contacts = () => {
                   id="message"
                 />
               </Form.Group>
-              <Button type="submit" id="button" onClick={handleClick}>
+              <Button
+                type="submit"
+                variant="light"
+                id="butto"
+                onClick={handleClick}
+              >
                 Submit
               </Button>
             </Form>

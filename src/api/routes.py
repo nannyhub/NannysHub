@@ -19,11 +19,12 @@ api = Blueprint('api', __name__)
 def getNannies():
     nannys_list = Nanny.query.all()
 
+
     if nannys_list:
         all_nannies = [nanny.serialize()  for nanny in nannys_list]   
         return jsonify(all_nannies), 200
-
-    return jsonify({'error': "No hay canguro"}), 404
+    
+    return "No hay canguro", 404
 
 
 

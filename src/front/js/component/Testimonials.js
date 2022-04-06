@@ -8,23 +8,28 @@ const Testimonials = () => {
     <>
       <section className="content-container">
         <div className="textArea">
-          <h2>Testimonials</h2>
-          <p>What others parents say about our babbysitters</p>
+          <h2 id="tes">Testimonials</h2>
+          <p>Check what others parents have to say about our nannies</p>
         </div>
         <div className="cust-container">
-          <img src={user1} alt="Avatar" style={{ width: "90px" }} />
+          <img src={user1} alt="Avatar" style={{ width: "90px" }} id="avi" />
           <p>
-            <span>John Doe.</span> Content Writer.
+            <span id="par">Joana Doe (Content Writer)</span>
           </p>
-          <p>Great attention to detail!</p>
+          <p id="ds">
+            Great professionals! There's nothing I could complain about these
+            nannies.
+          </p>
         </div>
 
         <div className="cust-container">
-          <img src={user2} alt="Avatar" style={{ width: "90px" }} />
+          <img src={user2} alt="Avatar" style={{ width: "90px" }} id="avi" />
           <p>
-            <span>Rebecca Flex.</span> Reporter
+            <span id="par">Rebecca Foster (Reporter)</span>
           </p>
-          <p>Nice enviroment to run my personal projects.</p>
+          <p id="ds">
+            Here, I finally found someone I could trust with my child.
+          </p>
         </div>
       </section>
     </>

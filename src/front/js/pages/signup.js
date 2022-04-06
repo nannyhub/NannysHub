@@ -13,10 +13,8 @@ export const Signup = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     actions.signUp(data);
   };
-  console.log(errors);
   const newSign = () => {
     return alert("Thank your signing up to NannyHub");
   };
