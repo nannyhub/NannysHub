@@ -10,6 +10,8 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = Column(Integer, primary_key=True)
+    first_name = Column(String(120), unique=False, nullable=False)
+    last_name = Column(String(120), unique=False, nullable=False)
     email = Column(String(120), unique=True, nullable=False)
     password = Column(String(500), unique=False, nullable=False)
 

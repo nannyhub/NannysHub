@@ -17,7 +17,7 @@ const Parents = () => {
       <br></br>
       <Row>
         <Col id="pt">
-          <i class="fas fa-baby" id="ic"></i>
+          <i className="fas fa-baby" id="ic"></i>
           mnbvcsawqaserfghhvbhjbjjkbjknlkkkkknjnljbbbbbbbbbbbbbbbbbbbblllllllllllllllllllllllllllllllllllllllll
         </Col>
         <Col id="bio">
@@ -73,7 +73,7 @@ const Parents = () => {
       </Row>
       <Row>
         <Col id="c1">
-          <i class="fas fa-baby-carriage" id="ic"></i>
+          <i className="fas fa-baby-carriage" id="ic"></i>
           szxdfghjklpiukhyjgfhjjokasjdhfkkjdsokdfjghjkojerdfhoqwpeirouihybg
         </Col>
         <Col id="c2">

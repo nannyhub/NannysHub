@@ -3,12 +3,14 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       nannies: [],
       nanny: {},
+      nannyList: [],
+      token: null,
     },
     actions: {
+      setToken: () => {
+        setStore({ token: localStorage.getItem("token") });
+      },
       login: (email, password) => {
-        console.log("Log In");
-        console.log("email", email);
-        console.log("password", password);
         let loginData = { email, password };
 
         fetch(`${process.env.BACKEND_URL}/login/`, {
@@ -21,7 +23,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
-            console.log("aqui", getStore().token);
           })
           .catch((error) => console.log("error", error));
       },
@@ -54,6 +55,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ nanny: data }))
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
+
+      //SIGN UP
       signUp: (data) => {
         fetch(`${process.env.BACKEND_URL}/signup/`, {
           method: "POST",
@@ -67,6 +70,31 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.log(result);
           })
           .catch((error) => console.log("error", error));
+      },
+
+      //LOG IN
+      login: (email, password) => {
+        let loginData = { email, password };
+
+        fetch(`${process.env.BACKEND_URL}/login`, {
+          method: "POST",
+          body: JSON.stringify(loginData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ token: result.token });
+            localStorage.setItem("token", result.token);
+          })
+          .catch((error) => console.log("error", error));
+      },
+
+      //LOG OUT
+      logout: () => {
+        sessionStorage.removeItem("token");
+        setStore({ token: null });
       },
     },
   };
