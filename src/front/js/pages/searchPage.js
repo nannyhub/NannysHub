@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import {
   FormControl,
   Container,
@@ -140,11 +141,17 @@ export const SearchPage = () => {
                 variant="outlined"
                 id="cart"
               >
-                <Avatar sx={{ width: 56, height: 56 }}>N</Avatar>
+                <Avatar sx={{ width: 56, height: 56 }}>
+                  {"https://randomuser.me/api/portraits/lego/" +
+                    Math.floor(Math.random() * 10) +
+                    -".jpg"}
+                </Avatar>
                 <div className="ms-4 d-flex flex-column">
-                  <h3 id="nome">
-                    {item?.first_name} {item?.last_name}
-                  </h3>
+                  <Link to={"/nannyprofile/" + nanny.id}>
+                    <h3 id="nome">
+                      {item?.first_name} {item?.last_name}
+                    </h3>
+                  </Link>
                   <h4 id="deet">Age: {item?.age}</h4>
                   <h5 id="deet">City: {item?.location}</h5>
                   <p id="dets">Skills and education: {item?.skils}</p>

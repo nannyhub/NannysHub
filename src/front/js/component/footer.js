@@ -23,8 +23,8 @@ export const Footer = () => {
               </Link>
             </div>
             <div>
-              <Link to="/parents" id="sm">
-                <h6>Parent's Area</h6>
+              <Link to="/search" id="sm">
+                <h6>Search Nannies</h6>
               </Link>
             </div>
           </div>
@@ -62,7 +62,7 @@ export const Footer = () => {
             </a>
           </div>
           <div id="signature" className="container-fluid text-center">
-            <p>© 2022 Copyright</p>
+            <p>© 2022 Copyright. Made by Alex, David, Maise and Vitor</p>
           </div>
         </div>
       </footer>
