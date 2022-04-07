@@ -2,12 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/index.css";
+import BookNannyModal from "../component/bookNannyModal";
+import Button from "react-bootstrap/Button";
 
 export const Nannyprofile = () => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   let pathImg =
     "https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     actions.getsingleNanny(params.id);
@@ -36,15 +40,21 @@ export const Nannyprofile = () => {
           </div>
           <div className=" mt-3 d-flex justify-content-center">
             <Link to="/">
-              <span className="btn btn-primary btn-lg" href="#" role="button">
+              <span
+                className="btn btn-primary btn-lg me-3"
+                href="#"
+                role="button"
+              >
                 Back home
               </span>
             </Link>
-            <Link className="ms-3" to="/">
-              <span className="btn btn-success btn-lg" href="#" role="button">
-                Book me!
-              </span>
-            </Link>
+            <Button variant="success" onClick={() => setModalShow(true)}>
+              Book Me!
+            </Button>
+            <BookNannyModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
           </div>
         </div>
       ) : (
