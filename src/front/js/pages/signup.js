@@ -61,11 +61,17 @@ export const Signup = () => {
             <input
               type="password"
               placeholder="Password"
-              {...register("Password", { required: true, maxLength: 12 })}
+              {...register("Password", { required: true, maxLength: 40 })}
               id="input4"
             />
-
-            <input type="submit" placeholder="Submit" id="bb" />
+            <button
+              type="submit"
+              className="btn btn-default"
+              id="bb"
+              onClick={newSign}
+            >
+              Sign Up
+            </button>
           </form>
         </Col>
       </Row>
