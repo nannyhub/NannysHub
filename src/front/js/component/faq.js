@@ -68,7 +68,7 @@ export const FAQ = () => (
     <div className="banner" id="hh">
       <h1> FAQs</h1>
     </div>
-    <Accordion defaultActiveKey="0">
+    <Accordion id="my-accordion" defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>
           Can I meet the nanny before she/he takes care of my children?
