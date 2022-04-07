@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-6zust9n0qzp.ws-us38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-08tp6u0isek.ws-eu38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -13,16 +13,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log("password", password);
         let loginData = { email, password };
 
-        fetch(
-          "https://3001-nannyhub-nannyshub-dpzmqeo0q2j.ws-eu38.gitpod.io/api/login",
-          {
-            method: "POST",
-            body: JSON.stringify(loginData),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
+        fetch(`${BASE_URL}/login`, {
+          method: "POST",
+          body: JSON.stringify(loginData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
@@ -31,21 +28,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
       getNannyApplyFilter: async (searchByInfo) => {
-        const response = await fetch(
-          "https://3001-nannyhub-nannyshub-vsm3fp1e71f.ws-eu38.gitpod.io/api/search-nannies",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(searchByInfo),
-          }
-        );
+        const response = await fetch(`${BASE_URL}/search-nannies`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(searchByInfo),
+        });
         const data = await response.json();
         setStore({ nannyList: data.response });
       },
       getNannies: () => {
-        fetch(`${BASE_URL}/nannies/`)
+        fetch(`${BASE_URL}/nannies`)
           .then((resp) => resp.json())
           .then((data) => setStore({ nannies: data }))
           .catch((error) => console.log("Error retrieving Nanny", error));
@@ -57,16 +51,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("Error retrieving Nanny", error));
       },
       signUp: (data) => {
-        fetch(
-          "https://3001-nannyhub-nannyshub-7cvcpg5ab0a.ws-eu38.gitpod.io/api/signup",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
+        fetch(`${BASE_URL}/signup`, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
           .then((response) => response.json())
           .then((result) => {
             console.log(result);
