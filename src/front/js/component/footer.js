@@ -23,8 +23,8 @@ export const Footer = () => {
               </Link>
             </div>
             <div>
-              <Link to="/parents" id="sm">
-                <h6>Parent's Area</h6>
+              <Link to="/search" id="sm">
+                <h6>Search Nannies</h6>
               </Link>
             </div>
           </div>
@@ -37,7 +37,7 @@ export const Footer = () => {
               href="https://twitter.com/hashtag/nannies"
             >
               <i
-                id="sm"
+                id="st"
                 className="fa fa-brands fa-twitter"
                 href="https://twitter.com/hashtag/nannies"
               ></i>
@@ -47,7 +47,7 @@ export const Footer = () => {
               title="follow me on instagram"
               href="https://www.instagram.com/explore/tags/nannies/?hl=es"
             >
-              <i id="sm" className="fa fa-instagram" aria-hidden="true"></i>
+              <i id="st" className="fa fa-instagram" aria-hidden="true"></i>
             </a>
             <a
               target="_blank"
@@ -55,7 +55,7 @@ export const Footer = () => {
               href="https://es-la.facebook.com/NannyAgencyPortugal/"
             >
               <i
-                id="sm"
+                id="st"
                 className="fa fa-facebook-official"
                 aria-hidden="true"
               ></i>
@@ -63,6 +63,7 @@ export const Footer = () => {
           </div>
           <div id="signature" className="container-fluid text-center">
             <p>© 2022 Copyright</p>
+            <span> Made by Alex, David, Maise and Vitor </span>
           </div>
         </div>
       </footer>
