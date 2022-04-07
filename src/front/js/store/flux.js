@@ -10,25 +10,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       setToken: () => {
         setStore({ token: localStorage.getItem("token") });
       },
-      login: (email, password) => {
-        let loginData = { email, password };
-
-        fetch(`${process.env.BACKEND_URL}/login/`, {
-          method: "POST",
-          body: JSON.stringify(loginData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-          .then((response) => response.json())
-          .then((result) => {
-            setStore({ token: result.token });
-          })
-          .catch((error) => console.log("error", error));
-      },
       getNannyApplyFilter: async (searchByInfo) => {
         const response = await fetch(
-          `${process.env.BACKEND_URL}/search-nannies/`,
+          `${process.env.BACKEND_URL}/search-nannies`,
           {
             method: "POST",
             headers: {
@@ -42,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getNannies: async () => {
         try {
-          const response = await fetch(`${process.env.BACKEND_URL}/nannies/`);
+          const response = await fetch(`${process.env.BACKEND_URL}/nannies`);
           const data = await response.json();
           setStore({ nannies: data });
         } catch (error) {
@@ -58,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       //SIGN UP
       signUp: (data) => {
-        fetch(`${process.env.BACKEND_URL}/signup/`, {
+        fetch(`${process.env.BACKEND_URL}/signup`, {
           method: "POST",
           body: JSON.stringify(data),
           headers: {
@@ -75,20 +59,46 @@ const getState = ({ getStore, getActions, setStore }) => {
       //LOG IN
       login: (email, password) => {
         let loginData = { email, password };
+        console.log(JSON.stringify(loginData));
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-        fetch(`${process.env.BACKEND_URL}/login`, {
+        var raw = JSON.stringify({
+          email: email,
+          password: password,
+        });
+
+        var requestOptions = {
           method: "POST",
-          body: JSON.stringify(loginData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://3001-nannyhub-nannyshub-08tp6u0isek.ws-eu38.gitpod.io/api/login",
+          requestOptions
+        )
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
             localStorage.setItem("token", result.token);
           })
           .catch((error) => console.log("error", error));
+
+        // fetch(`${process.env.BACKEND_URL}/login`, {
+        //   method: "POST",
+        //   body: JSON.stringify(loginData),
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        // })
+        //   .then((response) => response.json())
+        //   .then((result) => {
+        //     setStore({ token: result.token });
+        //     localStorage.setItem("token", result.token);
+        //   })
+        //   .catch((error) => console.log("error", error));
       },
 
       //LOG OUT
