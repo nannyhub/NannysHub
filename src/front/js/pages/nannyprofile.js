@@ -53,6 +53,7 @@ export const Nannyprofile = () => {
             </Button>
             <BookNannyModal
               show={modalShow}
+              name={store.nanny.first_name}
               onHide={() => setModalShow(false)}
             />
           </div>

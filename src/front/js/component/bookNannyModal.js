@@ -3,6 +3,10 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 export const BookNannyModal = (props) => {
+  const sendBooking = () => {
+    props.onHide();
+  };
+
   return (
     <Modal
       {...props}
@@ -12,19 +16,59 @@ export const BookNannyModal = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Book {props.name}!
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <div class="mb-3">
+          <label for="form-date" class="form-label">
+            Date:
+          </label>
+          <input
+            type="date"
+            class="form-control"
+            id="form-date"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="form-address" class="form-label">
+            Address:
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="form-address"
+            placeholder="Sesame Street, 45"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="form-number-of-children" class="form-label">
+            Number of Children
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            id="form-number-of-children"
+            min={0}
+          />
+        </div>
+        <div class="mb-3">
+          <label for="form-additional-comments" class="form-label">
+            Additional comments:
+          </label>
+          <textarea
+            class="form-control"
+            id="form-additional-comments"
+            rows="3"
+          ></textarea>
+        </div>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
+        <Button variant="success" onClick={() => sendBooking()}>
+          Send!
+        </Button>
       </Modal.Footer>
     </Modal>
   );

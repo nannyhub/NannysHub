@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://3001-nannyhub-nannyshub-08tp6u0isek.ws-eu38.gitpod.io/api";
+  "https://3001-nannyhub-nannyshub-qt9fbln2m47.ws-us38.gitpod.io/api";
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
