@@ -24,7 +24,7 @@ const Header = () => {
             <Modal.Header closeButton>
               <Modal.Title>Free Sign Up at NannysHub</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Estas buscando babbysitters cualificadas?</Modal.Body>
+            <Modal.Body>Are you looking for a qualified Babysitter?</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
