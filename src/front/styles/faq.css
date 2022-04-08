@@ -20,3 +20,7 @@ h1 {
   font-size: large;
   letter-spacing: 1px;
 }
+
+#my-accordion {
+  font-family: "Libre Baskerville", serif;
+}
