@@ -42,24 +42,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       //SIGN UP
       signUp: (data) => {
-        fetch(`${process.env.BACKEND_URL}/signup`, {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          "First name": `${data["First name"]}`,
+          "Last name": `${data["Last name"]}`,
+          Email: `${data["Email"]}`,
+          Password: `${data["Password"]}`,
+        });
+
+        var requestOptions = {
           method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(`${process.env.BACKEND_URL}/signup`, requestOptions)
           .then((response) => response.json())
-          .then((result) => {
-            console.log(result);
-          })
+          .then((result) => console.log(result))
           .catch((error) => console.log("error", error));
       },
 
       //LOG IN
       login: (email, password) => {
-        let loginData = { email, password };
-        console.log(JSON.stringify(loginData));
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -75,30 +82,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(
-          "https://3001-nannyhub-nannyshub-08tp6u0isek.ws-eu38.gitpod.io/api/login",
-          requestOptions
-        )
+        fetch(`${process.env.BACKEND_URL}/login`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
             localStorage.setItem("token", result.token);
           })
           .catch((error) => console.log("error", error));
-
-        // fetch(`${process.env.BACKEND_URL}/login`, {
-        //   method: "POST",
-        //   body: JSON.stringify(loginData),
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        // })
-        //   .then((response) => response.json())
-        //   .then((result) => {
-        //     setStore({ token: result.token });
-        //     localStorage.setItem("token", result.token);
-        //   })
-        //   .catch((error) => console.log("error", error));
       },
 
       //LOG OUT
