@@ -28,9 +28,6 @@ export const Signup = () => {
         <Col className="col-4" id="hand">
           <img src="https://images.pexels.com/photos/6393346/pexels-photo-6393346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
         </Col>
-        <Col className="col-4">
-          <img src="https://images.pexels.com/photos/6393180/pexels-photo-6393180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-        </Col>
         <Col className="col-4" id="register">
           <div id="pg">
             <p>
@@ -73,6 +70,9 @@ export const Signup = () => {
               Sign Up
             </button>
           </form>
+        </Col>
+        <Col className="col-4">
+          <img src="https://images.pexels.com/photos/6393180/pexels-photo-6393180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
         </Col>
       </Row>
       <div className="banner">
