@@ -56,13 +56,13 @@ p {
   padding: 0%;
 }
 #register {
-  width: 500px;
   background-color: #f7f5f2;
-  margin-left: 20px;
+  margin-left: 10px;
   height: 750px;
 }
 
 #pg {
+  padding-top: 25px;
   text-align: center;
   font-family: "Libre Baskerville", serif;
   letter-spacing: normal;
