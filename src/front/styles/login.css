@@ -10,20 +10,20 @@
 #sign {
   width: 500px;
   background-color: #f7f5f2;
-  margin-left: 10px;
+  margin-left: 0.6%;
   height: 750px;
   font-family: "Libre Baskerville", serif;
 }
 
 #ff {
-  margin: 20px;
+  margin: 10px;
   margin-left: 20%;
   font-family: "Libre Baskerville", serif;
   font-size: large;
 }
 
 #ll {
-  margin: 20px;
+  margin: 10px;
   background-color: #b3541e;
   font-size: large;
   color: white;
