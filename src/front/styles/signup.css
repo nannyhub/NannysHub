@@ -57,7 +57,7 @@ p {
 }
 #register {
   background-color: #f7f5f2;
-  margin-left: 10px;
+  margin-left: 0.9%;
   height: 750px;
 }
 
@@ -71,6 +71,10 @@ p {
   margin-left: 30%;
   margin-bottom: 20px;
   width: 200px;
+}
+#box {
+  margin-left: 5%;
+  width: 50%;
 }
 
 #bb {
