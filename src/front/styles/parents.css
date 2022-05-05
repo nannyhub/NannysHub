@@ -1,27 +1,62 @@
-#profile {
-  width: 180px;
-  height: 160px;
-  border-radius: 50%;
+#prof {
   margin-left: 10%;
+  margin-top: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-size: large;
+}
+#prof1 {
+  margin-left: 10%;
+  margin-top: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-size: large;
+}
+#prof2 {
+  margin-left: 10%;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Libre Baskerville", serif;
+  font-size: large;
 }
 
+#lego {
+  height: 180px;
+  width: 190px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+#pt {
+  background-color: #f7f5f2;
+  margin: 5px;
+  height: 400px;
+}
 #bio {
-  margin-top: 20px;
-  margin-left: 190px;
-  width: 480px;
-  height: 200px;
+  font-family: "Libre Baskerville", serif;
+  font-size: large;
+  background-color: #733c3c;
+  margin: 5px;
+  height: 400px;
 }
 
-#form {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: medium;
+#c1 {
+  background-color: #b3541e;
+  height: 400px;
+  margin: 5px;
 }
-#dropdown-button-example1 {
+
+#c2 {
+  background-color: #ceab93;
+  height: 400px;
+  margin: 5px;
+}
+
+#ic {
+  height: 400px;
+}
+#ww {
   background-color: white;
   color: black;
-}
-#button {
-  display: block;
-  margin-left: 40%;
+  margin-left: 30%;
+  margin-top: 20px;
+  font-family: "Libre Baskerville", serif;
 }
