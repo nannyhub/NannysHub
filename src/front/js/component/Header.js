@@ -12,17 +12,19 @@ const Header = () => {
   return (
     <>
       <header className="bg-image">
+        <div className="banner" id="nn">
+          <h1>NannyHub</h1>
+          <p>Things are better with Mary</p>
+        </div>
         <div className="bg-container">
-          <h1>NannyS Hub</h1>
-          <h2>Things better with Mary</h2>
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="light" onClick={handleShow} id="book">
             Book Now!
           </Button>
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Free Sign Up at NannysHub</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Estas buscando babbysitters cualificadas?</Modal.Body>
+            <Modal.Body>Are you looking for a qualified Babysitter?</Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
