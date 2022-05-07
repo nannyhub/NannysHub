@@ -49,16 +49,16 @@ p {
 
 #header {
   width: auto;
-  height: 200px;
+  height: 180px;
 }
-#hand {
+#hans {
   width: auto;
-  padding: 0%;
 }
 #register {
   background-color: #f7f5f2;
   margin-left: 0.9%;
   height: 750px;
+  width: 30%;
 }
 
 #pg {
@@ -83,6 +83,7 @@ p {
   color: white;
   border-radius: 5px;
   margin-left: 65%;
+  width: auto;
   margin-top: 15px;
   font-family: "IBM Plex Sans", sans-serif;
 }
@@ -92,7 +93,7 @@ form {
 }
 
 #input1 {
-  margin-left: 45%;
+  margin-left: 48%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -100,7 +101,7 @@ form {
 }
 
 #input2 {
-  margin-left: 45%;
+  margin-left: 48%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -108,7 +109,7 @@ form {
 }
 
 #input3 {
-  margin-left: 45%;
+  margin-left: 48%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
@@ -116,7 +117,7 @@ form {
 }
 
 #input4 {
-  margin-left: 45%;
+  margin-left: 48%;
   width: fit-content;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
