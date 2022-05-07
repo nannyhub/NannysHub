@@ -1,0 +1,26 @@
+h1 {
+  font-family: "Lato";
+  font-size: large;
+}
+#tt {
+  background-color: #f7f5f2;
+
+  font-family: "Lato";
+}
+#hh {
+  font-weight: 200;
+  font-size: x-large;
+  align-self: center;
+  color: #b3541e;
+}
+
+#cc {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 100;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+#my-accordion {
+  font-family: "Libre Baskerville", serif;
+}

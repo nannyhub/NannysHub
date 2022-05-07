@@ -1,0 +1,30 @@
+#google-map {
+  width: 600px;
+  height: 450px;
+  border: 0;
+}
+
+#cart {
+  margin: 15px;
+  min-width: 150px;
+}
+#nome {
+  color: #b3541e;
+}
+
+#deet {
+  font-family: "Lato";
+  font-size: large;
+}
+#dets {
+  font-family: "Lato";
+  font-size: large;
+  letter-spacing: normal;
+}
+
+#ba {
+  font-family: "Libre Baskerville", serif;
+  color: white;
+  background-color: #b3541e;
+  outline: white;
+}
