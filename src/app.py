@@ -7,10 +7,11 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db
+from api.models import db, Nanny
 from api.routes import api
 from api.admin import setup_admin
 from flask_jwt_extended import JWTManager
+from random import shuffle, randint
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
@@ -33,6 +34,48 @@ else:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db, compare_type = True)
 db.init_app(app)
+
+def populate_nannies(db, app):
+    first_names = ["John", "Marie", "Rafael", "Hugo", "Marlise", "Linda", "Mark", "Gustavo", "Marjorie", "Rebecca", "Will"]
+    last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez"]
+    locations = [
+        "The White House - 1600 Pennsylvania Avenue, Washington, D.C., USA",
+        "The Empire State Building - 350 Fifth Avenue, New York City, NY 10118",
+        "Bank of England - Threadneedle St, London, EC2R 8AH",
+        "The Gherkin - 30 St Mary Axe, London",
+        "4059 Mt Lee Dr. Hollywood, CA 90068",
+        "Statue of Liberty, Liberty Island New York, NY 10004",
+        "Manager Square, Bethlehem, West Bank",
+        "2 Macquarie Street, Sydney",
+        "Tour Eiffel Champ de Mars, Paris",
+        "11 Wall Street New York, NY",
+        ""
+    ]
+    skills = [
+        "Cooking", "Cleaning", "Storytelling", "Dancing", "Singing", "Accounting", "Programming",
+        "Handcrafting", "Woodchopping", "Existing", "Spoon bending", "Eating", "Awkward staring",
+        "Dog training", "Troublemaking", "Wrestling", "House blessing", "Floating", "Twerking",
+        "Skinning", "Skiing", "Alcoholism", "Pole Dancing", "Teaching", "Lecturing", "Smiling",
+        "Roleplaying", "Playing", "Acting", "Stealing", "Bodybuilding", "Studying", "Screaming"
+    ]
+
+    shuffle(first_names)
+    shuffle(last_names)
+    shuffle(locations)
+    
+    with app.app_context():
+        db.session.query(Nanny).delete()
+
+        for first_name, last_name, location in zip(first_names, last_names, locations):
+            shuffle(skills)
+            random_skills = [skills[i] for i in range(randint(2, 10))]
+            nanny = Nanny(first_name=first_name, last_name=last_name, age=randint(18,60), skills=", ".join(random_skills),
+            experience=randint(0,15), location=location, price=(randint(3, 25) * 5), longitude=0, latitude=0)
+            db.session.add(nanny)
+    
+        db.session.commit()
+
+populate_nannies(db, app)
 
 # Allow CORS requests to this API
 CORS(app)
