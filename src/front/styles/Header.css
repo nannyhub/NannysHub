@@ -1,7 +1,7 @@
 header,
 .bg-image {
   color: #3da2daff;
-  background-image: url("https://github.com/nannyhub/NannysHub/blob/landingpage/src/front/img/nan.jpg?raw=true");
+  background-image: url("https://images.pexels.com/photos/7282620/pexels-photo-7282620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   min-height: 50vh;
   padding-top: 20vh;
   text-align: center;
@@ -14,6 +14,14 @@ header,
   font-weight: bold;
 }
 
+#book {
+  background-color: white;
+  align-self: flex-end;
+  border-color: #b3541e;
+}
+#nn {
+  color: white;
+}
 header h1 {
   font-size: 3rem;
   margin: 0 0 1rem;

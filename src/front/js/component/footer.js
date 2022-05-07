@@ -5,25 +5,25 @@ export const Footer = () => {
   return (
     <>
       <footer className="page-footer font-small blue pt-4">
-        <div id="links" class="container text-center">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div id="links" className="container text-center">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div>
-              <Link to="/login">
+              <Link to="/login" id="sm">
                 <h6>Log In</h6>
               </Link>
             </div>
             <div>
-              <Link to="/faq">
+              <Link to="/faq" id="sm">
                 <h6>FAQ's</h6>
               </Link>
             </div>
             <div>
-              <Link to="/contacts">
+              <Link to="/contacts" id="sm">
                 <h6>Contact Us</h6>
               </Link>
             </div>
             <div>
-              <Link to="/">
+              <Link to="/search" id="sm">
                 <h6>Search Nannies</h6>
               </Link>
             </div>
@@ -37,7 +37,7 @@ export const Footer = () => {
               href="https://twitter.com/hashtag/nannies"
             >
               <i
-                id="twitter"
+                id="sm"
                 className="fa fa-brands fa-twitter"
                 href="https://twitter.com/hashtag/nannies"
               ></i>
@@ -47,18 +47,22 @@ export const Footer = () => {
               title="follow me on instagram"
               href="https://www.instagram.com/explore/tags/nannies/?hl=es"
             >
-              <i className="fa fa-instagram" aria-hidden="true"></i>
+              <i id="sm" className="fa fa-instagram" aria-hidden="true"></i>
             </a>
             <a
               target="_blank"
               title="follow me on facebook"
               href="https://es-la.facebook.com/NannyAgencyPortugal/"
             >
-              <i className="fa fa-facebook-official" aria-hidden="true"></i>
+              <i
+                id="sm"
+                className="fa fa-facebook-official"
+                aria-hidden="true"
+              ></i>
             </a>
           </div>
           <div id="signature" className="container-fluid text-center">
-            <p>© 2022 Copyright</p>
+            <p>© 2022 Copyright. Made by Alex, David, Maise and Vitor</p>
           </div>
         </div>
       </footer>

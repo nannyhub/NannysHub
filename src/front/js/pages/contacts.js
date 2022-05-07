@@ -6,8 +6,17 @@ import Form from "react-bootstrap/Form";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Contacts = () => {
+  const handleClick = () => {
+    return alert(
+      "Thank you for reaching out. We'll get back to you as soon as possible"
+    );
+  };
   return (
     <>
+      <div className="header" id="header">
+        <h1>NannyHub</h1>
+        <p>Things are better with Mary</p>
+      </div>
       <div className="text-center" id="titulo">
         <h3> Our Mission</h3>
       </div>
@@ -22,12 +31,12 @@ const Contacts = () => {
           <Col>
             <p className="row-md col-6" id="mission">
               NannyHub was born from the vision of one of our members, as a
-              parent. At the begging, as a group, we decided to follow this
+              parent. At the beginning, as a group, we decided to follow this
               vision, considering 2 out of 3 members are parents and feel very
               strongly motivated to improve the nanny and childcare industry.
-              Later on, we were joined by another member who, despite not
-              having children, also shared our passion for the childcare
-              industry, and dove in to help us in the completion of this project
+              Later on, we were joined by another member who, despite not having
+              children, also shared our passion for the childcare industry, and
+              dove in to help us in the completion of this project
             </p>
           </Col>
         </Row>
@@ -58,10 +67,19 @@ const Contacts = () => {
                 <Form.Control type="subject" placeholder="Subject" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formMessage" id="message">
-                <Form.Control type="message" placeholder=" Add your message" />
+              <Form.Group className="mb-3" controlId="formMessage">
+                <Form.Control
+                  type="message"
+                  placeholder=" Add your message"
+                  id="message"
+                />
               </Form.Group>
-              <Button variant="primary" type="submit" id="button">
+              <Button
+                type="submit"
+                variant="light"
+                id="butto"
+                onClick={handleClick}
+              >
                 Submit
               </Button>
             </Form>
