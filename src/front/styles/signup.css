@@ -67,8 +67,8 @@ p {
   font-family: "Libre Baskerville", serif;
   letter-spacing: normal;
   font-size: medium;
-  align-self: center;
-  margin-left: 30%;
+  align-content: center;
+  margin-left: 32%;
   margin-bottom: 20px;
   width: 200px;
 }
@@ -82,8 +82,8 @@ p {
   border-color: white;
   color: white;
   border-radius: 5px;
-  margin-left: 65%;
-  width: auto;
+  margin-left: 75%;
+  width: max-content;
   margin-top: 15px;
   font-family: "IBM Plex Sans", sans-serif;
 }
@@ -94,7 +94,7 @@ form {
 
 #input1 {
   margin-left: 48%;
-  width: fit-content;
+  width: 100%;
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
   font-size: medium;
@@ -102,7 +102,8 @@ form {
 
 #input2 {
   margin-left: 48%;
-  width: fit-content;
+  width: 100%;
+
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
   font-size: medium;
@@ -110,7 +111,8 @@ form {
 
 #input3 {
   margin-left: 48%;
-  width: fit-content;
+  width: 100%;
+
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
   font-size: medium;
@@ -118,7 +120,8 @@ form {
 
 #input4 {
   margin-left: 48%;
-  width: fit-content;
+  width: 100%;
+
   font-family: "IBM Plex Sans", sans-serif;
   margin-bottom: 15px;
   font-size: medium;
