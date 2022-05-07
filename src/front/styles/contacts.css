@@ -1,0 +1,37 @@
+#form {
+  padding: 15px;
+  margin-right: 5%;
+}
+
+#mission {
+  letter-spacing: 1px;
+  line-height: 1.8;
+  margin-left: 25%;
+}
+
+#contact {
+  margin-left: 10%;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+#titulo {
+  margin-left: 40%;
+  padding-top: 8px;
+}
+#call {
+  margin-left: 15%;
+  padding-top: 5px;
+}
+
+#butto {
+  margin-left: 43%;
+  background-color: #b3541e;
+  color: white;
+  font-family: "IBM Plex Sans", sans-serif;
+  outline-color: white;
+}
+
+#kids {
+  width: 530px;
+}

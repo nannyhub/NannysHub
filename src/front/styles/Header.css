@@ -1,0 +1,46 @@
+header,
+.bg-image {
+  color: #3da2daff;
+  background-image: url("https://images.pexels.com/photos/7282620/pexels-photo-7282620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  min-height: 50vh;
+  padding-top: 20vh;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: cover; /* Resize the background image to cover the entire container */
+  font-weight: bold;
+}
+
+#book {
+  background-color: white;
+  align-self: flex-end;
+  border-color: #b3541e;
+}
+#nn {
+  color: white;
+}
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+
+header h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+header a {
+  color: #fbb464ff;
+}
+a:hover {
+  color: #f06e26ff;
+}
+
+/* selected link */
+a:active {
+  color: #f06e26ff;
+}
