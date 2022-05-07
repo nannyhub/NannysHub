@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getNannyApplyFilter: async (searchByInfo) => {
         const response = await fetch(
-          `${process.env.BACKEND_URL}/search-nannies`,
+          `${process.env.BACKEND_URL}/api/search-nannies`,
           {
             method: "POST",
             headers: {
@@ -26,7 +26,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getNannies: async () => {
         try {
-          const response = await fetch(`${process.env.BACKEND_URL}/nannies`);
+          const response = await fetch(
+            `${process.env.BACKEND_URL}/api/nannies`
+          );
           const data = await response.json();
           setStore({ nannies: data });
         } catch (error) {
@@ -34,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       getsingleNanny: (nannyId) => {
-        fetch(`${process.env.BACKEND_URL}/nannies/${nannyId}`)
+        fetch(`${process.env.BACKEND_URL}/api/nannies/${nannyId}`)
           .then((resp) => resp.json())
           .then((data) => setStore({ nanny: data }))
           .catch((error) => console.log("Error retrieving Nanny", error));
@@ -59,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(`${process.env.BACKEND_URL}/signup`, requestOptions)
+        fetch(`${process.env.BACKEND_URL}/api/signup`, requestOptions)
           .then((response) => response.json())
           .then((result) => console.log(result))
           .catch((error) => console.log("error", error));
@@ -82,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(`${process.env.BACKEND_URL}/login`, requestOptions)
+        fetch(`${process.env.BACKEND_URL}/api/login`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
             setStore({ token: result.token });
