@@ -18,24 +18,27 @@
 }
 
 .price .col-header {
-  background-color: #fbb464ff;
+  background-color: #b3541e;
   color: white;
   font-size: 25px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .price li {
   border-bottom: 1px solid #eee;
   padding: 20px;
   text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .price .grey {
   background-color: #eee;
   font-size: 20px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .button {
-  background-color: #3da2daff;
+  background-color: white;
   border: none;
   color: white;
   padding: 10px 25px;
@@ -45,6 +48,7 @@
   border-radius: 5px;
   -webkit-transition: 1s;
   transition: 1s;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .button:hover {
