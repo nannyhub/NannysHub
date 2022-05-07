@@ -8,7 +8,6 @@ import { FAQ } from "./component/faq";
 import { SearchPage } from "./pages/searchPage";
 import Login from "./pages/login";
 import { Signup } from "./pages/signup";
-import Contacts from "./pages/contacts";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
