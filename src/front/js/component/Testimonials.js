@@ -1,8 +1,6 @@
 import React from "react";
-import user1 from "../../img/paty.jpg";
-import user2 from "../../img/nan.jpg";
 import "../../styles/Testimonials.css";
-
+import Carousel from "react-bootstrap/Carousel";
 const Testimonials = () => {
   return (
     <>
@@ -11,26 +9,44 @@ const Testimonials = () => {
           <h2 id="tes">Testimonials</h2>
           <p>Check what others parents have to say about our nannies</p>
         </div>
-        <div className="cust-container">
-          <img src={user1} alt="Avatar" style={{ width: "90px" }} id="avi" />
-          <p>
-            <span id="par">Joana Doe (Content Writer)</span>
-          </p>
-          <p id="ds">
-            Great professionals! There's nothing I could complain about these
-            nannies.
-          </p>
+        <div>
+          <Carousel>
+            <Carousel.Item id="carousel">
+              <h3 className="header" id="carousel">
+                "With NannyHub I was finally able to find a professional that I
+                can trust my children with"
+              </h3>
+              <p id="opinions"> -Lilith Salvatore</p>
+            </Carousel.Item>
+            <Carousel.Item id="carousel">
+              <h2 className="header" id="carousel">
+                "This service is a MUST when you're in a pinch"
+              </h2>
+              <p id="opinions"> -Nancy Martin </p>
+            </Carousel.Item>
+            <Carousel.Item id="carousel">
+              <h2 className="header" id="carousel">
+                "With NannyHub I was finally able to find a professional that I
+                can trust my children with"
+              </h2>
+              <p id="opinions"> -Malcom Welsh</p>
+            </Carousel.Item>
+            <Carousel.Item id="carousel">
+              <h2 className="header" id="carousel">
+                "I am usually very picky with peoople who are around my
+                children, but now I trust every nanny"
+              </h2>
+              <p id="opinions"> -Robert Shells</p>
+            </Carousel.Item>{" "}
+            <Carousel.Item id="carousel">
+              <h2 className="header" id="carousel">
+                "My children love their new nanny. Thank you NannyHub"
+              </h2>
+              <p id="opinions"> -Fiona Harrington</p>
+            </Carousel.Item>
+          </Carousel>
         </div>
-
-        <div className="cust-container">
-          <img src={user2} alt="Avatar" style={{ width: "90px" }} id="avi" />
-          <p>
-            <span id="par">Rebecca Foster (Reporter)</span>
-          </p>
-          <p id="ds">
-            Here, I finally found someone I could trust with my child.
-          </p>
-        </div>
+        <br></br>
       </section>
     </>
   );
