@@ -147,14 +147,14 @@ export const SearchPage = () => {
                     -".jpg"}
                 </Avatar>
                 <div className="ms-4 d-flex flex-column">
-                  <Link to={"/nannyprofile/" + nanny.id}>
+                  <Link to={"/nannyprofile/" + item.id}>
                     <h3 id="nome">
                       {item?.first_name} {item?.last_name}
                     </h3>
                   </Link>
                   <h4 id="deet">Age: {item?.age}</h4>
                   <h5 id="deet">City: {item?.location}</h5>
-                  <p id="dets">Skills and education: {item?.skils}</p>
+                  <p id="dets">Skills and education: {item?.skills}</p>
                   <p id="dets">Years of experience: {item?.experience}</p>
                 </div>
               </Paper>
