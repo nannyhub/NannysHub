@@ -64,6 +64,7 @@ def populate_nannies(db, app):
     shuffle(locations)
     
     with app.app_context():
+        db.create_all()
         db.session.query(Nanny).delete()
 
         for first_name, last_name, location in zip(first_names, last_names, locations):
