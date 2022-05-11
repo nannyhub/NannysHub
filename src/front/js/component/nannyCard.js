@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Paper from "@mui/material/Paper";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import "../../styles/nannyCard.css";
 
 export const NannyCard = ({ item }) => {
   const [picture, setPicture] = useState("");
@@ -18,15 +19,15 @@ export const NannyCard = ({ item }) => {
   }, []);
 
   return (
-    <div key={item.id} className="d-flex flex-wrap w-90">
+    <div key={item.id} className="outer-nanny-card d-flex flex-wrap">
       <Paper
-        className="d-flex align-items-center p-3 w-80"
+        className="d-flex align-items-center p-3 w-100"
         elevation={0}
         variant="outlined"
         id="cart"
       >
         <Avatar sx={{ width: 56, height: 56 }} src={picture} />
-        <div className="ms-4 d-flex flex-column">
+        <div className="nanny-card ms-4 d-flex flex-column">
           <Link to={"/nannyprofile/" + item.id}>
             <h3 id={`nanny-name-${item.id}`}>
               {item?.first_name} {item?.last_name}
