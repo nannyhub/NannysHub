@@ -64,18 +64,20 @@ def create_user():
 ##Filtering data
 @api.route("/search-nannies", methods=["POST"])
 def search_nannies():
-    location= request.json.get("location")
-    price= request.json.get("price")
-    experience= request.json.get("experience")
+    location = request.json.get("location")
+    price = request.json.get("price")
+    experience = request.json.get("experience")
     queries = []
+    
     if location:
-        queries.append(Nanny.location == location)
-    if price and price!="":
+        queries.append(Nanny.location.ilike(f"%{location}%"))
+    if price:
         queries.append(Nanny.price <= int(price))
-    if experience and experience!="":
+    if experience:
         queries.append(Nanny.experience >= int(experience))
+
     nannies = Nanny.query.filter(*queries)
-    return jsonify({"response":list(map(lambda nanny:nanny.serialize(),nannies))})
+    return jsonify({"response": [nanny.serialize() for nanny in nannies]})
 
     # Create a route to authenticate your users and return JWTs. The
     # create_access_token() function is used to actually generate the JWT.
