@@ -34,7 +34,7 @@ export const NannyCard = ({ item }) => {
             </h3>
           </Link>
           <h4 id={`nanny-age-${item.id}`}>Age: {item?.age}</h4>
-          <h5 id={`nanny-location-${item.id}`}>City: {item?.location}</h5>
+          <h5 id={`nanny-location-${item.id}`}>Address: {item?.location}</h5>
           <p id={`nanny-skills-${item.id}`}>
             Skills and education: {item?.skills}
           </p>
