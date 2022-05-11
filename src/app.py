@@ -36,8 +36,8 @@ MIGRATE = Migrate(app, db, compare_type = True)
 db.init_app(app)
 
 def populate_nannies(db, app):
-    first_names = ["John", "Marie", "Rafael", "Hugo", "Marlise", "Linda", "Mark", "Gustavo", "Marjorie", "Rebecca", "Will"]
-    last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez"]
+    first_names = ["John", "Marie", "Rafael", "Hugo", "Marlise", "Linda", "Mark", "Gustavo", "Marjorie", "Rebecca", "Will", "Gilmar"]
+    last_names = ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Souza"]
     locations = [
         "The White House - 1600 Pennsylvania Avenue, Washington, D.C., USA",
         "The Empire State Building - 350 Fifth Avenue, New York City, NY 10118",
@@ -49,13 +49,15 @@ def populate_nannies(db, app):
         "2 Macquarie Street, Sydney",
         "Tour Eiffel Champ de Mars, Paris",
         "11 Wall Street New York, NY",
-        "1071 CZ Amsterdam, Netherlands"
+        "1071 CZ Amsterdam, Netherlands",
+        "10 Downing St London SW1A 2AB, United Kingdom"
+
     ]
     skills = [
         "Cooking", "Cleaning", "Storytelling", "Dancing", "Singing", "Accounting", "Programming",
         "Handcrafting", "Woodchopping", "Existing", "Spoon bending", "Eating", "Awkward staring",
         "Dog training", "Troublemaking", "Wrestling", "House blessing", "Floating", "Twerking",
-        "Skinning", "Skiing", "Alcoholism", "Pole Dancing", "Teaching", "Lecturing", "Smiling",
+        "Skinning", "Skiing", "First Aid Knowledge", "Teaching", "Lecturing", "Smiling",
         "Roleplaying", "Playing", "Acting", "Stealing", "Bodybuilding", "Studying", "Screaming"
     ]
 

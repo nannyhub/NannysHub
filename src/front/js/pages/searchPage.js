@@ -19,6 +19,8 @@ export const SearchPage = () => {
   const baseUrl = "https://www.google.com/maps/embed/v1/place";
   const apiKey = "AIzaSyCyVmgXIL08YhSyk-HvPdo2IFUzzuyQIXg";
   const [location, setLocation] = useState({ lat: -34.397, lng: 150.644 });
+  const [searchByInfo, setSearchByInfo] = useState({});
+  const { store, actions } = useContext(Context);
 
   const renderLocation = (status) => {
     switch (status) {
@@ -41,23 +43,15 @@ export const SearchPage = () => {
     });
   }, []);
 
-  const [searchByInfo, setSearchByInfo] = useState({});
-  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getNannyApplyFilter(searchByInfo);
+  }, [searchByInfo]);
 
   return (
     <>
       <Container>
         <div className="d-flex flex-column justify-content-center align-items-center my-3 mx-5">
-          <InputGroup className="mb-3 w-50">
-            <Button variant="success" id="button-addon1">
-              <i className="fa-solid fa-magnifying-glass" />
-            </Button>
-            <FormControl
-              aria-label="Example text with button addon"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
-          <Row>
+          <Row className="mb-3">
             <Col>
               <i className="fas fa-map-marker-alt"></i>
             </Col>
@@ -80,8 +74,10 @@ export const SearchPage = () => {
             <Col className="search">
               <input
                 id="search-bar-amount"
-                type="text"
-                placeholder="€ per Hour(max.value)"
+                type="number"
+                min="0"
+                step="5"
+                placeholder="€/Hour (Maximum)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -91,13 +87,14 @@ export const SearchPage = () => {
               />
             </Col>
             <Col>
-              <i className="fa-solid fa-badge-check"></i>
+              <i className="fa-solid fa-check"></i>
             </Col>
             <Col className="search">
               <input
                 id="search-bar-experience"
-                type="text"
-                placeholder="Experience(min.years)"
+                type="number"
+                min="0"
+                placeholder="Experience (In Years)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -106,24 +103,13 @@ export const SearchPage = () => {
                 }}
               />
             </Col>
-            <Col>
-              <Button
-                variant="light"
-                id="ba"
-                onClick={() => {
-                  actions.getNannyApplyFilter(searchByInfo);
-                }}
-              >
-                Search
-              </Button>
-            </Col>
           </Row>
           <div className="d-flex flex-column w-50 align-items-center">
             <Wrapper apiKey={apiKey} render={renderLocation} />
           </div>
         </div>
       </Container>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap w-75 m-auto">
         {store.nannies.map((item, index) => (
           <NannyCard item={item} key={index} />
         ))}
