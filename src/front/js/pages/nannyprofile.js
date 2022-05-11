@@ -35,7 +35,9 @@ export const Nannyprofile = () => {
               <span className="pb-3">
                 Years of experience: {store.nanny.experience}{" "}
               </span>
-              <span className="pb-3">Price (hourly): {store.nanny.price} </span>
+              <span className="pb-3">
+                Price (hourly): {store.nanny.price}€{" "}
+              </span>
             </div>
           </div>
           <div className=" mt-3 d-flex justify-content-center">

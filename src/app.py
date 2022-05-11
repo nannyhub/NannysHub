@@ -49,7 +49,7 @@ def populate_nannies(db, app):
         "2 Macquarie Street, Sydney",
         "Tour Eiffel Champ de Mars, Paris",
         "11 Wall Street New York, NY",
-        ""
+        "1071 CZ Amsterdam, Netherlands"
     ]
     skills = [
         "Cooking", "Cleaning", "Storytelling", "Dancing", "Singing", "Accounting", "Programming",
@@ -64,6 +64,7 @@ def populate_nannies(db, app):
     shuffle(locations)
     
     with app.app_context():
+        db.create_all()
         db.session.query(Nanny).delete()
 
         for first_name, last_name, location in zip(first_names, last_names, locations):
