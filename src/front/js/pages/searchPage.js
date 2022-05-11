@@ -120,12 +120,6 @@ export const SearchPage = () => {
           </Row>
           <div className="d-flex flex-column w-50 align-items-center">
             <Wrapper apiKey={apiKey} render={renderLocation} />
-            <Slider
-              className="w-75"
-              defaultValue={50}
-              aria-label="Default"
-              valueLabelDisplay="auto"
-            />
           </div>
         </div>
       </Container>
