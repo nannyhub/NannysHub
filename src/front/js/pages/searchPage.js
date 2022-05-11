@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import {
   FormControl,
   Container,
@@ -14,8 +13,7 @@ import Slider from "@mui/material/Slider";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import "../../styles/searchpage.css";
 import Map from "../component/map";
-import Paper from "@mui/material/Paper";
-import { Avatar } from "@mui/material";
+import NannyCard from "../component/nannyCard";
 
 export const SearchPage = () => {
   const baseUrl = "https://www.google.com/maps/embed/v1/place";
@@ -132,35 +130,9 @@ export const SearchPage = () => {
         </div>
       </Container>
       <div className="d-flex flex-wrap">
-        {store.nannies.map((item) => {
-          return (
-            <div key={item.id} className="d-flex flex-wrap w-90">
-              <Paper
-                className="d-flex align-items-center p-3 w-80"
-                elevation={0}
-                variant="outlined"
-                id="cart"
-              >
-                <Avatar sx={{ width: 56, height: 56 }}>
-                  {"https://randomuser.me/api/portraits/lego/" +
-                    Math.floor(Math.random() * 10) +
-                    -".jpg"}
-                </Avatar>
-                <div className="ms-4 d-flex flex-column">
-                  <Link to={"/nannyprofile/" + item.id}>
-                    <h3 id="nome">
-                      {item?.first_name} {item?.last_name}
-                    </h3>
-                  </Link>
-                  <h4 id="deet">Age: {item?.age}</h4>
-                  <h5 id="deet">City: {item?.location}</h5>
-                  <p id="dets">Skills and education: {item?.skills}</p>
-                  <p id="dets">Years of experience: {item?.experience}</p>
-                </div>
-              </Paper>
-            </div>
-          );
-        })}
+        {store.nannies.map((item, index) => (
+          <NannyCard item={item} key={index} />
+        ))}
       </div>
       <br></br>
     </>
