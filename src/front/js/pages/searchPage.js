@@ -1,15 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
-import {
-  FormControl,
-  Container,
-  Button,
-  Col,
-  InputGroup,
-  Spinner,
-  Row,
-} from "react-bootstrap";
+import { Container, Col, Spinner, Row } from "react-bootstrap";
 import { Context } from "../store/appContext";
-import Slider from "@mui/material/Slider";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import "../../styles/searchpage.css";
 import Map from "../component/map";
@@ -29,7 +20,7 @@ export const SearchPage = () => {
       case Status.FAILURE:
         return <h1>Error loading Map!</h1>;
       case Status.SUCCESS:
-        return <Map center={location} zoom={4} />;
+        return <Map nannies={store.nannies} center={location} zoom={4} />;
     }
   };
 
