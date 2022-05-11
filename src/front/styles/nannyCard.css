@@ -1,0 +1,15 @@
+.nanny-card {
+  color: black;
+}
+
+.nanny-card a {
+  color: black;
+}
+
+.nanny-card p {
+  letter-spacing: 1px;
+}
+
+.outer-nanny-card {
+  flex: 50%;
+}

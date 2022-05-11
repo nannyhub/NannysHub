@@ -77,7 +77,7 @@ export const SearchPage = () => {
                 type="number"
                 min="0"
                 step="5"
-                placeholder="€ per Hour(max.value)"
+                placeholder="€/Hour (Maximum)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -94,7 +94,7 @@ export const SearchPage = () => {
                 id="search-bar-experience"
                 type="number"
                 min="0"
-                placeholder="Experience(min.years)"
+                placeholder="Experience (In Years)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -115,7 +115,7 @@ export const SearchPage = () => {
           </div>
         </div>
       </Container>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap w-75 m-auto">
         {store.nannies.map((item, index) => (
           <NannyCard item={item} key={index} />
         ))}
