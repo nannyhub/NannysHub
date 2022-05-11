@@ -65,7 +65,7 @@ export const SearchPage = () => {
               <input
                 id="search-bar-city"
                 type="text"
-                placeholder="Filter by city"
+                placeholder="Location"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -81,7 +81,7 @@ export const SearchPage = () => {
               <input
                 id="search-bar-amount"
                 type="text"
-                placeholder="Filter by € per hour"
+                placeholder="€ per Hour(max.value)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
@@ -97,7 +97,7 @@ export const SearchPage = () => {
               <input
                 id="search-bar-experience"
                 type="text"
-                placeholder="Filter by Experience"
+                placeholder="Experience(min.years)"
                 onChange={(event) => {
                   setSearchByInfo({
                     ...searchByInfo,
